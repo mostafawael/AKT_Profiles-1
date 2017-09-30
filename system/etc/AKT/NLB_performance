@@ -17,10 +17,13 @@ fi
 echo $$ > /data/system/NLB
 echo "$divider"
 echo ""
-if [ -e "/sys/block/dm-0/queue/scheduler" ]; then
-echo zen > /sys/block/dm-0/queue/scheduler
-echo 0 > /sys/block/dm-0/queue/iostats
-echo 1 > /sys/block/dm-0/queue/rq_affinity
+if [ -e "/sys/block/sda/queue/scheduler" ]; then
+    if [ -e /sys/block/sda/queue/scheduler_hard ]; then
+        echo zen > /sys/block/sda/queue/scheduler_hard
+    fi
+    echo zen > /sys/block/sda/queue/scheduler
+echo 0 > /sys/block/sda/queue/iostats
+echo 1 > /sys/block/sda/queue/rq_affinity
 echo "Setting I/O scheduler to zen... "
 echo "Configuring I/O parameters..."
 echo ""
@@ -29,7 +32,10 @@ echo "$divider"
 echo ""
 fi
 if [ -e "/sys/devices/virtual/block/dm-0/queue/scheduler" ]; then
-echo zen > /sys/devices/virtual/block/dm-0/queue/scheduler
+   if [ -e /sys/block/dm-0/queue/scheduler_hard ]; then
+        echo zen > /sys/block/dm-0/queue/scheduler_hard
+   fi
+    echo zen > /sys/block/dm-0/queue/scheduler
 echo 0 > /sys/devices/virtual/block/dm-0/queue/iostats
 echo 1 > /sys/devices/virtual/block/dm-0/queue/rq_affinity
 echo "Setting I/O scheduler to zen... "
@@ -176,5 +182,6 @@ echo ""
 sleep 0.5
 echo "Interactive *nameless* tweaks applied" > /data/system/nameless
 echo $date >> /data/system/nameless
+echo "Nameless Performance" > /data/system/current_profile
 echo "Nameless Performance profile Activated"
 sleep 4

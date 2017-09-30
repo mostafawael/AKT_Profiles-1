@@ -1,39 +1,42 @@
-
-#!/system/bin/sh
+ #!/system/bin/sh
 #All-in-One Project
-#Scripted - Asiier
+#Scripted - Asiier & Senthil360
 #Tweaks - @Senthil360 @Mostafa Wael @Patalao @Asiier
 BB=/system/etc/AKT/busybox
 divider="  =============================  "
 echo ""
 echo $divider
-echo -e "\e[01;36m   -All-in-One Project- \e[00;37m"
-echo -e "\e[01;36m        - A·K·T -   \e[00;37m"
+echo -e "\e[01;36m   - All-in-One Project - \e[00;37m"
+echo -e "\e[01;36m - Advanced·Kernel·Tweaks - \e[00;37m"
+echo -e "\e[01;36m         - [A·K·T] -   \e[00;37m"
+echo -e "\e[01;36m      ~ Stable - 1.6 ~   \e[00;37m"
 echo $divider
+sleep 1
 echo ""
-sleep 2
+echo -e "\e[01;36m *** By Asiier & Senthil360 *** \e[00;37m"
+echo ""
+if ! [ -e "/storage/emulated/0/AKT/AKT" ]; then
+mkdir /storage/emulated/0/AKT && touch /storage/emulated/0/AKT/AKT
+fi
+sleep 1
 clear
-function Battery
+function BatteryOP3
 {
-option=0
-until [ "$option" = "6" ]; do
-echo -e "\e[01;31m    UP  Less Battery / More Performance \e[00;37m"
-echo -e "\e[01;32m   | \e[00;37m"
-echo -e "\e[01;32m   | \e[00;37m"
-echo -e "\e[01;32m DOWN More Battery / Less Performance \e[00;37m"
+while true; do
+echo -e "\e[01;91m   UP  Less Battery / More Performance \e[00;37m"
+echo -e "\e[01;33m   | \e[00;37m"
+echo -e "\e[01;93m   | \e[00;37m"
+echo -e "\e[01;92m DOWN  More Battery / Less Performance \e[00;37m"
 echo ""
-sleep 3
-echo -e "\e[01;32m 1.) Nameless Battery by @Senthil360 \e[00;37m"
-echo ""
-echo -e "\e[01;34m 2.) Project Zhana Battery by @Asiier \e[00;37m"
-echo ""
-echo -e "\e[01;32m 3.) Project X.A.N.A Battery by @Asiier \e[00;37m"
-echo ""
-echo -e "\e[01;34m 4.) Project X.A.N.A Battery Extreme by @Asiier \e[00;37m"
-echo ""
-echo -e "\e[01;35m 5.) Additional tweaks... \e[00;37m"
-echo ""
-echo -e "\e[01;35m 6.) Main menu \e[00;37m"
+sleep 1.5
+echo -e "\e[02;91m 1.) Project Zhana Battery by @Asiier \e[00;37m"
+echo -e "\e[01;31m 2.) Nameless Battery by @Senthil360  \e[00;37m"
+echo -e "\e[02;33m 3.) FairPark by @Asiier \e[00;37m"
+echo -e "\e[01;93m 4.) Fusion Conservative by @patalao \e[00;37m"
+echo -e "\e[01;93m 5.) Project X.A.N.A Battery by @Asiier \e[00;37m"
+echo -e "\e[01;92m 6.) Project X.A.N.A Battery Extreme by @Asiier \e[00;37m"
+echo -e "\e[01;90m 7.) Additional tweaks... \e[00;37m"
+echo -e "\e[01;94m 8.) Main menu \e[00;37m"
 echo ""
 echo $divider
 echo ""
@@ -41,44 +44,145 @@ echo -n "Please select a profile:"
 read option
 echo ""
 case $option in
-1 ) #Nameless_Battery 
+1 ) #Project_Zhana_Battery
+$BB mount -o remount,rw /system 2>/dev/null
 mount -o remount,rw /system 2>/dev/null
-cat /system/etc/AKT/NLB_battery > /system/etc/init.d/99AKT
+if [ -e "/system/su.d/99AKT" ]; then
+grep -v "sleep" /system/etc/AKT/PZ_battery > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/su.d/99AKT
+chmod 700 /system/su.d/99AKT
+fi
+if [ -e "/system/etc/init.d/99AKT" ]; then
+grep -v "sleep" /system/etc/AKT/PZ_battery > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/su.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
-chmod 777 /system/etc/AKT/NLB_battery
-sh /system/etc/AKT/NLB_battery
-sleep 5;
-clear;;
-2 ) #Project_Zhana_Battery
-mount -o remount,rw /system 2>/dev/null
-cat /system/etc/AKT/PZ_battery > /system/etc/init.d/99AKT
-chmod 777 /system/etc/init.d/99AKT
+fi
+if [ -e "/storage/emulated/0/AKT/AKT" ]; then
+grep -v "sleep" /system/etc/AKT/PZ_battery > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /storage/emulated/0/AKT/AKT
+fi
 chmod 777 /system/etc/AKT/PZ_battery
+clear
 sh /system/etc/AKT/PZ_battery
-sleep 5;
-clear;;
-3 ) #Project_XANA_Battery
+clear
+echo " Installation finished... "
+echo " For additional information and questions, please visit our XDA thread"
+sleep 10
+sleep 5; main_menu_op3;
+exit;;
+2 ) #Nameless_Battery 
+$BB mount -o remount,rw /system 2>/dev/null
 mount -o remount,rw /system 2>/dev/null
-cat /system/etc/AKT/PX_battery > /system/etc/init.d/99AKT
+if [ -e "/system/su.d/99AKT" ]; then
+grep -v "sleep" ./system/etc/AKT/NLB_battery > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/su.d/99AKT
+chmod 700 /system/su.d/99AKT
+fi
+if [ -e "/system/etc/init.d/99AKT" ]; then
+grep -v "sleep" /system/etc/AKT/NLB_battery > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/etc/init.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
+fi
+chmod 777 /system/etc/AKT/NLB_battery
+clear
+if [ -e "/storage/emulated/0/AKT/AKT" ]; then
+grep -v "sleep" /system/etc/AKT/NLB_battery > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /storage/emulated/0/AKT/AKT
+fi
+sh /system/etc/AKT/NLB_battery
+clear
+echo " Installation finished... "
+echo " For additional information and questions, please visit our XDA thread"
+sleep 5; main_menu_op3;
+exit;;
+3 ) #FairPark
+$BB mount -o remount,rw /system 2>/dev/null
+mount -o remount,rw /system 2>/dev/null
+if [ -e "/system/su.d/99AKT" ]; then
+grep -v "sleep" /system/etc/AKT/FairPark > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/su.d/99AKT
+chmod 700 /system/su.d/99AKT
+fi
+if [ -e "/system/etc/init.d/99AKT" ]; then
+grep -v "sleep" /system/etc/AKT/FairPark > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/etc/init.d/99AKT
+chmod 777 /system/etc/init.d/99AKT
+fi
+if [ -e "/storage/emulated/0/AKT/AKT" ]; then
+grep -v "sleep" /system/etc/AKT/FairPark > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /storage/emulated/0/AKT/AKT
+fi
+chmod 777 /system/etc/AKT/FairPark
+clear
+sh /system/etc/AKT/FairPark
+clear
+echo " Installation finished... "
+echo " For additional information and questions, please visit our XDA thread"
+sleep 5; main_menu_op3;
+exit;;
+4 ) #Fusion Conservative
+$BB mount -o remount,rw /system 2>/dev/null
+mount -o remount,rw /system 2>/dev/null
+if [ -e "/system/su.d/99AKT" ]; then
+grep -v "sleep" /system/etc/AKT/FusionC > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/su.d/99AKT
+chmod 700 /system/su.d/99AKT
+fi
+if [ -e "/system/etc/init.d/99AKT" ]; then
+grep -v "sleep" /system/etc/AKT/FusionC > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/etc/init.d/99AKT
+chmod 777 /system/etc/init.d/99AKT
+fi
+if [ -e "/storage/emulated/0/AKT/AKT" ]; then
+grep -v "sleep" /system/etc/AKT/FusionP > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /storage/emulated/0/AKT/AKT
+fi
+chmod 777 /system/etc/AKT/FusionP
+clear
+sh /system/etc/AKT/FusionC
+clear
+echo " Installation finished... "
+echo " For additional information and questions, please visit our XDA thread"
+sleep 5; main_menu_op3;
+exit;;
+5 ) #Project_XANA_Battery
+$BB mount -o remount,rw /system 2>/dev/null
+mount -o remount,rw /system 2>/dev/null
+if [ -e "/system/su.d/99AKT" ]; then
+grep -v "sleep" /system/etc/AKT/PX_battery > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/su.d/99AKT
+chmod 700 /system/su.d/99AKT
+fi
+if [ -e "/system/etc/init.d/99AKT" ]; then
+grep -v "sleep" /system/etc/AKT/PX_battery > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/etc/init.d/99AKT
+chmod 777 /system/etc/init.d/99AKT
+fi
+if [ -e "/storage/emulated/0/AKT/AKT" ]; then
+grep -v "sleep" /system/etc/AKT/PX_battery > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /storage/emulated/0/AKT/AKT
+fi
 chmod 777 /system/etc/AKT/PX_battery
+clear
 sh /system/etc/AKT/PX_battery
-sleep 5;
-clear;;
-4 ) #Project_XANA_Balanced
+clear
+echo " Installation finished... "
+echo " For additional information and questions, please visit our XDA thread"
+sleep 5; main_menu_op3;
+exit;;
+6 ) #Project_XANA_Extreme
+$BB mount -o remount,rw /system 2>/dev/null
 mount -o remount,rw /system 2>/dev/null
-cat /system/etc/AKT/PX_battery_extreme > /system/etc/init.d/99AKT
+if [ -e "/system/su.d/99AKT" ]; then
+grep -v "sleep" /system/etc/AKT/PX_battery_extreme > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/su.d/99AKT
+chmod 700 /system/su.d/99AKT
+fi
+if [ -e "/system/etc/init.d/99AKT" ]; then
+grep -v "sleep" /system/etc/AKT/PX_battery_extreme > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/etc/init.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
+fi
+if [ -e "/storage/emulated/0/AKT/AKT" ]; then
+grep -v "sleep" /system/etc/AKT/PX_battery_extreme > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /storage/emulated/0/AKT/AKT
+fi
 chmod 777 /system/etc/AKT/PX_battery_extreme
+clear
 sh /system/etc/AKT/PX_battery_extreme
-sleep 5;
-clear;;
-5 ) echo "Coming soon"
+clear
+echo " Installation finished... "
+echo " For additional information and questions, please visit our XDA thread"
+sleep 5; main_menu_op3;
+exit;;
+7 ) echo "Coming soon"
 echo " You tell me what to add here"
 sleep 2;
-clear;;
-6 ) clear; main_menu;;
-7 ) clear; break ;;
+clear; main_menu_op3;
+exit;;
+8 ) clear; main_menu_op3;;
 * ) clear; echo " Please, enter a valid option..."; 
 sleep 2;
 clear;;
@@ -86,25 +190,23 @@ esac
 # }
  done
 }
-function Performance
+function BatteryOP3T
 {
-option=0
-until [ "$option" = "4" ]; do
-echo -e "\e[01;31m    UP  Less Battery / More Performance \e[00;37m"
-echo -e "\e[01;32m   | \e[00;37m"
-echo -e "\e[01;32m   | \e[00;37m"
-echo -e "\e[01;32m DOWN More Battery / Less Performance \e[00;37m"
+while true; do
+echo -e "\e[01;91m   UP  Less Battery / More Performance \e[00;37m"
+echo -e "\e[01;33m   | \e[00;37m"
+echo -e "\e[01;93m   | \e[00;37m"
+echo -e "\e[01;92m DOWN  More Battery / Less Performance \e[00;37m"
 echo ""
-sleep 3
-echo -e "\e[01;32m 1.) Burnout Extrem Final by @Mostafa Wael \e[00;37m"
-echo ""
-echo -e "\e[01;32m 2.) Nameless Perfomance by @Senthil360 \e[00;37m"
-echo ""
-echo -e "\e[01;34m 3.) Fusion Performance by @Patalao \e[00;37m"
-echo ""
-echo -e "\e[01;35m 4.) Additional tweaks like BPR or other... \e[00;37m"
-echo ""
-echo -e "\e[01;35m 5.) Main menu \e[00;37m"
+sleep 1.5
+echo -e "\e[02;91m 1.) Project Zhana Battery by @Asiier \e[00;37m"
+echo -e "\e[01;31m 2.) Nameless Battery by @Senthil360  \e[00;37m"
+echo -e "\e[02;33m 3.) FairPark by @Asiier \e[00;37m"
+echo -e "\e[01;93m 4.) Fusion Conservative by @patalao \e[00;37m"
+echo -e "\e[01;93m 5.) Project X.A.N.A Battery by @Asiier \e[00;37m"
+echo -e "\e[01;92m 6.) Project X.A.N.A Battery Extreme by @Asiier \e[00;37m"
+echo -e "\e[01;90m 7.) Additional tweaks... \e[00;37m"
+echo -e "\e[01;94m 8.) Main menu \e[00;37m"
 echo ""
 echo $divider
 echo ""
@@ -112,69 +214,287 @@ echo -n "Please select a profile:"
 read option
 echo ""
 case $option in
-1 ) mount -o remount,rw /system 2>/dev/null
-cat /system/etc/AKT/BEF > /system/etc/init.d/99AKT
+1 ) #Project_Zhana_Battery
+$BB mount -o remount,rw /system 2>/dev/null
+mount -o remount,rw /system 2>/dev/null
+if [ -e "/system/su.d/99AKT" ]; then
+grep -v "sleep" /system/etc/AKT/PZ_batteryT > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/su.d/99AKT
+chmod 700 /system/su.d/99AKT
+fi
+if [ -e "/system/etc/init.d/99AKT" ]; then
+grep -v "sleep" /system/etc/AKT/PZ_batteryT > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/etc/init.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
+fi
+if [ -e "/storage/emulated/0/AKT/AKT" ]; then
+grep -v "sleep" /system/etc/AKT/PZ_batteryT > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /storage/emulated/0/AKT/AKT
+fi
+chmod 777 /system/etc/AKT/PZ_batteryT
+clear
+sh /system/etc/AKT/PZ_batteryT
+clear
+echo " Installation finished... "
+echo " For additional information and questions, please visit our XDA thread"
+sleep 10
+sleep 5; main_menu_op3;
+exit;;
+2 ) #Nameless_Battery 
+$BB mount -o remount,rw /system 2>/dev/null
+mount -o remount,rw /system 2>/dev/null
+if [ -e "/system/su.d/99AKT" ]; then
+grep -v "sleep" /system/etc/AKT/NLB_batteryT > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/su.d/99AKT
+chmod 700 /system/su.d/99AKT
+fi
+if [ -e "/system/etc/init.d/99AKT" ]; then
+grep -v "sleep" /system/etc/AKT/NLB_batteryT > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/etc/init.d/99AKT
+chmod 777 /system/etc/init.d/99AKT
+fi
+if [ -e "/storage/emulated/0/AKT/AKT" ]; then
+grep -v "sleep" /system/etc/AKT/NLB_batteryT > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /storage/emulated/0/AKT/AKT
+fi
+chmod 777 /system/etc/AKT/NLB_batteryT
+clear
+sh /system/etc/AKT/NLB_batteryT
+clear
+echo " Installation finished... "
+echo " For additional information and questions, please visit our XDA thread"
+sleep 5; main_menu_op3;
+exit;;
+3 ) #FairPark
+$BB mount -o remount,rw /system 2>/dev/null
+mount -o remount,rw /system 2>/dev/null
+if [ -e "/system/su.d/99AKT" ]; then
+grep -v "sleep" /system/etc/AKT/FairParkT > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/su.d/99AKT
+chmod 700 /system/su.d/99AKT
+fi
+if [ -e "/system/etc/init.d/99AKT" ]; then
+grep -v "sleep" /system/etc/AKT/FairParkT > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/etc/init.d/99AKT
+chmod 777 /system/etc/init.d/99AKT
+fi
+if [ -e "/storage/emulated/0/AKT/AKT" ]; then
+grep -v "sleep" /system/etc/AKT/FairParkT > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /storage/emulated/0/AKT/AKT
+fi
+chmod 777 /system/etc/AKT/FairParkT
+clear
+sh /system/etc/AKT/FairParkT
+clear
+echo " Installation finished... "
+echo " For additional information and questions, please visit our XDA thread"
+sleep 5; main_menu_op3;
+exit;;
+4 ) #Fusion Conservative
+$BB mount -o remount,rw /system 2>/dev/null
+mount -o remount,rw /system 2>/dev/null
+if [ -e "/system/su.d/99AKT" ]; then
+grep -v "sleep" /system/etc/AKT/FusionCT > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/su.d/99AKT
+chmod 700 /system/su.d/99AKT
+fi
+if [ -e "/system/etc/init.d/99AKT" ]; then
+grep -v "sleep" /system/etc/AKT/FusionCT > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/etc/init.d/99AKT
+chmod 777 /system/etc/init.d/99AKT
+fi
+if [ -e "/storage/emulated/0/AKT/AKT" ]; then
+grep -v "sleep" /system/etc/AKT/FusionCT > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /storage/emulated/0/AKT/AKT
+fi
+chmod 777 /system/etc/AKT/FusionCT
+clear
+sh /system/etc/AKT/FusionCT
+clear
+echo " Installation finished... "
+echo " For additional information and questions, please visit our XDA thread"
+sleep 5; main_menu_op3;
+exit;;
+5 ) #Project_XANA_Battery
+$BB mount -o remount,rw /system 2>/dev/null
+mount -o remount,rw /system 2>/dev/null
+if [ -e "/system/su.d/99AKT" ]; then
+grep -v "sleep" /system/etc/AKT/PX_batteryT > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/su.d/99AKT
+chmod 700 /system/su.d/99AKT
+fi
+if [ -e "/system/etc/init.d/99AKT" ]; then
+grep -v "sleep" /system/etc/AKT/PX_batteryT > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/etc/init.d/99AKT
+chmod 777 /system/etc/init.d/99AKT
+fi
+if [ -e "/storage/emulated/0/AKT/AKT" ]; then
+grep -v "sleep" /system/etc/AKT/PX_batteryT > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /storage/emulated/0/AKT/AKT
+fi
+chmod 777 /system/etc/AKT/PX_batteryT
+clear
+sh /system/etc/AKT/PX_batteryT
+clear
+echo " Installation finished... "
+echo " For additional information and questions, please visit our XDA thread"
+sleep 5; main_menu_op3;
+exit;;
+6 ) #Project_XANA_Extreme
+$BB mount -o remount,rw /system 2>/dev/null
+mount -o remount,rw /system 2>/dev/null
+if [ -e "/system/su.d/99AKT" ]; then
+grep -v "sleep" /system/etc/AKT/PX_battery_extremeT > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/su.d/99AKT
+chmod 700 /system/su.d/99AKT
+fi
+if [ -e "/system/etc/init.d/99AKT" ]; then
+grep -v "sleep" /system/etc/AKT/PX_battery_extremeT > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/etc/init.d/99AKT
+chmod 777 /system/etc/init.d/99AKT
+fi
+if [ -e "/storage/emulated/0/AKT/AKT" ]; then
+grep -v "sleep" /system/etc/AKT/PX_battery_extremeT > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /storage/emulated/0/AKT/AKT
+fi
+chmod 777 /system/etc/AKT/PX_battery_extremeT
+clear
+sh /system/etc/AKT/PX_battery_extremeT
+clear
+echo " Installation finished... "
+echo " For additional information and questions, please visit our XDA thread"
+sleep 5; main_menu_op3;
+exit;;
+7 ) echo "Coming soon"
+echo " You tell me what to add here"
+sleep 2;
+clear; main_menu_op3;
+exit;;
+8 ) clear; main_menu_op3;;
+* ) clear; echo " Please, enter a valid option..."; 
+sleep 2;
+clear;;
+esac
+# }
+ done
+}
+function PerformanceOP3
+{
+while true; do
+echo -e "\e[01;91m   UP  Less Battery / More Performance \e[00;37m"
+echo -e "\e[01;33m   | \e[00;37m"
+echo -e "\e[01;93m   | \e[00;37m"
+echo -e "\e[01;92m DOWN  More Battery / Less Performance \e[00;37m"
+echo ""
+sleep 1.5
+echo -e "\e[01;91m 1.) Burnout PR5 by @Mostafa Wael \e[00;37m"
+echo -e "\e[01;91m 2.) Burnout PR3 by @Mostafa Wael \e[00;37m"
+echo -e "\e[01;33m 3.) Nameless Perfomance by @Senthil360 \e[00;37m"
+echo -e "\e[01;92m 4.) Fusion Performance by @Patalao \e[00;37m"
+echo -e "\e[01;90m 5.) Additional tweaks... \e[00;37m"
+echo -e "\e[01;94m 6.) Main menu \e[00;37m"
+echo ""
+echo $divider
+echo ""
+echo -n "Please select a profile:"
+read option
+echo ""
+case $option in
+1 ) #Burnout PR3 
+$BB mount -o remount,rw /system 2>/dev/null
+mount -o remount,rw /system 2>/dev/null
+if [ -e "/system/su.d/99AKT" ]; then
+grep -v "sleep" /system/etc/AKT/BEF > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/etc/init.d/99AKT
+chmod 700 /system/su.d/99AKT
+fi
+if [ -e "/system/etc/init.d/99AKT" ]; then
+grep -v "sleep" /system/etc/AKT/BEF > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/su.d/99AKT
+chmod 777 /system/etc/init.d/99AKT
+fi
+if [ -e "/storage/emulated/0/AKT/AKT" ]; then
+grep -v "sleep" /system/etc/AKT/BEF > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /storage/emulated/0/AKT/AKT
+fi
 chmod 777 /system/etc/AKT/BEF
 clear
 sh /system/etc/AKT/BEF
 clear
-echo " Installation finished... For additional information and questions, please visit our XDA thread"
-sleep 5;
+echo " Installation finished... "
+echo " For additional information and questions, please visit our XDA thread"
+sleep 5; main_menu_op3;
 exit;;
-2 ) mount -o remount,rw /system 2>/dev/null
-cat /system/etc/AKT/NLB_performance > /system/etc/init.d/99AKT
+2 ) #Burnout PR3.5 
+$BB mount -o remount,rw /system 2>/dev/null
+mount -o remount,rw /system 2>/dev/null
+if [ -e "/system/su.d/99AKT" ]; then
+grep -v "sleep" /system/etc/AKT/BPN > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/etc/init.d/99AKT
+chmod 700 /system/su.d/99AKT
+fi
+if [ -e "/system/etc/init.d/99AKT" ]; then
+grep -v "sleep" /system/etc/AKT/BPN > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/su.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
+fi
+if [ -e "/storage/emulated/0/AKT/AKT" ]; then
+grep -v "sleep" /system/etc/AKT/BPN > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /storage/emulated/0/AKT/AKT
+fi
+clear
+sh /system/etc/AKT/BPN
+clear
+echo " Installation finished... "
+echo " For additional information and questions, please visit our XDA thread"
+sleep 5; main_menu_op3;
+exit;;
+3 )  #Nameless Performance
+$BB mount -o remount,rw /system 2>/dev/null
+mount -o remount,rw /system 2>/dev/null
+if [ -e "/system/su.d/99AKT" ]; then
+grep -v "sleep" /system/etc/AKT/NLB_performance > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/su.d/99AKT
+chmod 700 /system/su.d/99AKT
+fi
+if [ -e "/system/etc/init.d/99AKT" ]; then
+grep -v "sleep" /system/etc/AKT/NLB_performance > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/etc/init.d/99AKT
+chmod 777 /system/etc/init.d/99AKT
+fi
+if [ -e "/storage/emulated/0/AKT/AKT" ]; then
+grep -v "sleep" /system/etc/AKT/NLB_performance > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /storage/emulated/0/AKT/AKT
+fi
 chmod 777 /system/etc/AKT/NLB_performance
 clear
 sh /system/etc/AKT/NLB_performance
 clear
-echo " Installation finished... For additional information and questions, please visit our XDA thread"
-sleep 5;
+echo " Installation finished... "
+echo " For additional information and questions, please visit our XDA thread"
+sleep 5; main_menu_op3;
 exit;;
-3 ) mount -o remount,rw /system 2>/dev/null
-cat /system/etc/AKT/FusionP > /system/etc/init.d/99AKT
+4 ) #Fusion Perfomance
+$BB mount -o remount,rw /system 2>/dev/null
+mount -o remount,rw /system 2>/dev/null
+if [ -e "/system/su.d/99AKT" ]; then
+grep -v "sleep" /system/etc/AKT/FusionP > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/su.d/99AKT
+chmod 700 /system/su.d/99AKT
+fi
+if [ -e "/system/etc/init.d/99AKT" ]; then
+grep -v "sleep" /system/etc/AKT/FusionP > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/etc/init.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
+fi
+if [ -e "/storage/emulated/0/AKT/AKT" ]; then
+grep -v "sleep" /system/etc/AKT/FusionP > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /storage/emulated/0/AKT/AKT
+fi
 chmod 777 /system/etc/AKT/FusionP
 clear
 sh /system/etc/AKT/FusionP
 clear
-echo " Installation finished... For additional information and questions, please visit our XDA thread"
-sleep 5;
+echo " Installation finished... "
+echo " For additional information and questions, please visit our XDA thread"
+sleep 5; main_menu_op3;
 exit;;
-4 ) clear
+5 ) clear
 echo "Coming Soon"
 echo "You tell me what others tweaks you want me too add"
-sleep 5;;
-5 ) clear; main_menu;;
-6 ) break ;;
+sleep 5; main_menu_op3;
+exit;;
+6 ) clear; main_menu;;
 * ) echo " Please, enter a valid option..."
 sleep 2
 esac
 # }
  done
 }
-function Balanced
+function PerformanceOP3T
 {
-option=0
-until [ "$option" = "6" ]; do
-echo -e "\e[01;31m   UP  Less Battery / More Performance \e[00;37m"
-echo -e "\e[01;32m   | \e[00;37m"
-echo -e "\e[01;32m   | \e[00;37m"
-echo -e "\e[01;32m DOWN More Battery / Less Performance \e[00;37m"
+while true; do
+echo -e "\e[01;91m   UP  Less Battery / More Performance \e[00;37m"
+echo -e "\e[01;33m   | \e[00;37m"
+echo -e "\e[01;93m   | \e[00;37m"
+echo -e "\e[01;92m DOWN  More Battery / Less Performance \e[00;37m"
 echo ""
-sleep 3
-echo -e "\e[01;31m 1.) GhostPepper by @Asiier \e[00;37m"
-echo ""
-echo -e "\e[01;32m 2.) Fusion Balanced by @Patalao \e[00;37m"
-echo ""
-echo -e "\e[01;33m 3.) Nameless Balanced by @Senthil360 \e[00;37m"
-echo ""
-echo -e "\e[01;34m 4.) Project by Zhana @Asiier \e[00;37m"
-echo ""
-echo -e "\e[01;35m 5.) Additional tweaks... \e[00;37m"
-echo ""
-echo -e "\e[01;35m 6.) Main menu \e[00;37m"
+sleep 1.5
+echo -e "\e[01;91m 1.) Burnout PR5 by @Mostafa Wael \e[00;37m"
+echo -e "\e[01;33m 2.) Nameless Perfomance by @Senthil360 \e[00;37m"
+echo -e "\e[01;92m 3.) Fusion Performance by @Patalao \e[00;37m"
+echo -e "\e[01;90m 4.) Additional tweaks... \e[00;37m"
+echo -e "\e[01;94m 5.) Main menu \e[00;37m"
 echo ""
 echo $divider
 echo ""
@@ -182,44 +502,585 @@ echo -n "Please select a profile:"
 read option
 echo ""
 case $option in
-1 ) clear 
-echo "Not yet avalible"
-sleep 2;;
-2 ) mount -o remount,rw /system 2>/dev/null
-cat /system/etc/AKT/FusionB > /system/etc/init.d/99AKT
+1 ) #Burnout PR3 
+$BB mount -o remount,rw /system 2>/dev/null
+mount -o remount,rw /system 2>/dev/null
+if [ -e "/system/su.d/99AKT" ]; then
+grep -v "sleep" /system/etc/AKT/BEFT > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/su.d/99AKT
+chmod 700 /system/su.d/99AKT
+fi
+if [ -e "/system/etc/init.d/99AKT" ]; then
+grep -v "sleep" /system/etc/AKT/BEFT > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/su.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
+fi
+if [ -e "/storage/emulated/0/AKT/AKT" ]; then
+grep -v "sleep" /system/etc/AKT/BEFT > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /storage/emulated/0/AKT/AKT
+fi
+chmod 777 /system/etc/AKT/BEFT
+clear
+sh /system/etc/AKT/BEFT
+clear
+echo " Installation finished... "
+echo " For additional information and questions, please visit our XDA thread"
+sleep 5; main_menu_op3t;
+exit;;
+#2 ) #Burnout PR3.5 
+#$BB mount -o remount,rw /system 2>/dev/null
+#mount -o remount,rw /system 2>/dev/null
+#if [ -e "/system/su.d/99AKT" ]; then
+#cat /system/etc/AKT/BPN > /system/su.d/99AKT
+#chmod 700 /system/su.d/99AKT
+#fi
+#if [ -e "/system/etc/init.d/99AKT" ]; then
+#cat /system/etc/AKT/BPN > /system/etc/init.d/99AKT
+#chmod 777 /system/etc/init.d/99AKT
+#fi
+#clear
+#sh /system/etc/AKT/BPN
+#clear
+#echo " Installation finished... "
+#echo " For additional information and questions, please visit our XDA thread"
+#sleep 5; main_menu_op3t;
+#exit;;
+2 )  #Nameless Performance
+$BB mount -o remount,rw /system 2>/dev/null
+mount -o remount,rw /system 2>/dev/null
+if [ -e "/system/su.d/99AKT" ]; then
+grep -v "sleep" /system/etc/AKT/NLB_performanceT > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/su.d/99AKT
+chmod 700 /system/su.d/99AKT
+fi
+if [ -e "/system/etc/init.d/99AKT" ]; then
+grep -v "sleep" /system/etc/AKT/NLB_performanceT > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/su.d/99AKT
+chmod 777 /system/etc/init.d/99AKT
+fi
+if [ -e "/storage/emulated/0/AKT/AKT" ]; then
+grep -v "sleep" /system/etc/AKT/NLB_performanceT > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /storage/emulated/0/AKT/AKT
+fi
+chmod 777 /system/etc/AKT/NLB_performanceT
+clear
+sh /system/etc/AKT/NLB_performanceT
+clear
+echo " Installation finished... "
+echo " For additional information and questions, please visit our XDA thread"
+sleep 5; main_menu_op3t;
+exit;;
+3 ) #Fusion Perfomance
+$BB mount -o remount,rw /system 2>/dev/null
+mount -o remount,rw /system 2>/dev/null
+if [ -e "/system/su.d/99AKT" ]; then
+grep -v "sleep" /system/etc/AKT/FusionPT > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/su.d/99AKT
+chmod 700 /system/su.d/99AKT
+fi
+if [ -e "/system/etc/init.d/99AKT" ]; then
+grep -v "sleep" /system/etc/AKT/FusionPT > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/su.d/99AKT
+chmod 777 /system/etc/init.d/99AKT
+fi
+if [ -e "/storage/emulated/0/AKT/AKT" ]; then
+grep -v "sleep" /system/etc/AKT/FusionPT > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /storage/emulated/0/AKT/AKT
+fi
+chmod 777 /system/etc/AKT/FusionPT
+clear
+sh /system/etc/AKT/FusionPT
+clear
+echo " Installation finished... "
+echo " For additional information and questions, please visit our XDA thread"
+sleep 5; main_menu_op3t;
+exit;;
+4 ) clear
+echo "Coming Soon"
+echo "You tell me what others tweaks you want me too add"
+sleep 5; main_menu_op3t;
+exit;;
+5 ) clear; main_menu_op3t;;
+* ) echo " Please, enter a valid option..."
+sleep 2
+esac
+# }
+ done
+}
+function BalancedOP3
+{
+while true; do
+echo -e "\e[01;91m   UP  Less Battery / More Performance \e[00;37m"
+echo -e "\e[01;33m   | \e[00;37m"
+echo -e "\e[01;93m   | \e[00;37m"
+echo -e "\e[01;92m DOWN  More Battery / Less Performance \e[00;37m"
+echo ""
+sleep 1.5
+echo -e "\e[02;91m 1.) Fusion Reborn by @Patalao \e[00;37m"
+echo -e "\e[02;91m 2.) GhostPepper by @Asiier \e[00;37m"
+echo -e "\e[01;31m 3.) Fusion Balanced by @Patalao \e[00;37m"
+echo -e "\e[02;33m 4.) Nameless Balanced by @Senthil360 \e[00;37m"
+echo -e "\e[01;93m 5.) HawkPepper by @Asiier \e[00;37m"
+echo -e "\e[01;92m 6.) Project by Zhana Balanced by @Asiier \e[00;37m"
+echo -e "\e[01;92m 7.) Project by X.A.N.A Balanced by @Asiier \e[00;37m"
+echo -e "\e[01;90m 8.) Additional tweaks... \e[00;37m"
+echo -e "\e[01;94m 9.) Main menu \e[00;37m"
+echo ""
+echo $divider
+echo ""
+echo -n "Please select a profile:"
+read option
+echo ""
+case $option in
+1 ) #FusionR
+$BB mount -o remount,rw /system 2>/dev/null
+mount -o remount,rw /system 2>/dev/null
+if [ -e "/system/su.d/99AKT" ]; then
+grep -v "sleep" /system/etc/AKT/FusionR > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/su.d/99AKT
+chmod 700 /system/su.d/99AKT
+fi
+if [ -e "/system/etc/init.d/99AKT" ]; then
+grep -v "sleep" /system/etc/AKT/FusionR > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/su.d/99AKT
+chmod 777 /system/etc/init.d/99AKT
+fi
+if [ -e "/storage/emulated/0/AKT/AKT" ]; then
+grep -v "sleep" /system/etc/AKT/FusionR > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /storage/emulated/0/AKT/AKT
+fi
+chmod 777 /system/etc/AKT/FusionR
+clear
+sh /system/etc/AKT/FusionR
+clear
+echo " Installation finished... "
+echo " For additional information and questions, please visit our XDA thread"
+sleep 5; main_menu_op3;
+exit;;
+2 ) #GhostPepper
+$BB mount -o remount,rw /system 2>/dev/null
+mount -o remount,rw /system 2>/dev/null
+if [ -e "/system/su.d/99AKT" ]; then
+grep -v "sleep" /system/etc/AKT/GhostPepper > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/su.d/99AKT
+chmod 700 /system/su.d/99AKT
+fi
+if [ -e "/system/etc/init.d/99AKT" ]; then
+grep -v "sleep" /system/etc/AKT/GhostPepper > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/su.d/99AKT
+chmod 777 /system/etc/init.d/99AKT
+fi
+if [ -e "/storage/emulated/0/AKT/AKT" ]; then
+grep -v "sleep" /system/etc/AKT/GhostPepper > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /storage/emulated/0/AKT/AKT
+fi
+chmod 777 /system/etc/AKT/GhostPepper
+clear
+sh /system/etc/AKT/GhostPepper
+clear
+echo " Installation finished... "
+echo " For additional information and questions, please visit our XDA thread"
+sleep 5; main_menu_op3;
+exit;;
+3 ) #Fusion Balanced
+$BB mount -o remount,rw /system 2>/dev/null
+mount -o remount,rw /system 2>/dev/null
+if [ -e "/system/su.d/99AKT" ]; then
+grep -v "sleep" /system/etc/AKT/FusionB > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/su.d/99AKT
+chmod 700 /system/su.d/99AKT
+fi
+if [ -e "/system/etc/init.d/99AKT" ]; then
+grep -v "sleep" /system/etc/AKT/FusionB > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/su.d/99AKT
+chmod 777 /system/etc/init.d/99AKT
+fi
+if [ -e "/storage/emulated/0/AKT/AKT" ]; then
+grep -v "sleep" /system/etc/AKT/FusionB > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /storage/emulated/0/AKT/AKT
+fi
 chmod 777 /system/etc/AKT/FusionB
 clear
 sh /system/etc/AKT/FusionB
 clear
-echo " Installation finished... For additional information and questions, please visit our XDA thread"
-sleep 5;
+echo " Installation finished... "
+echo " For additional information and questions, please visit our XDA thread"
+sleep 5; main_menu_op3;
 exit;;
-3 ) mount -o remount,rw /system 2>/dev/null
-cat /system/etc/AKT/NLB_balanced > /system/etc/init.d/99AKT
+4 ) #Nameless Balanced 
+$BB mount -o remount,rw /system 2>/dev/null
+mount -o remount,rw /system 2>/dev/null
+if [ -e "/system/su.d/99AKT" ]; then
+grep -v "sleep" /system/etc/AKT/NLB_balanced > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/su.d/99AKT
+chmod 700 /system/su.d/99AKT
+fi
+if [ -e "/system/etc/init.d/99AKT" ]; then
+grep -v "sleep" /system/etc/AKT/NLB_balanced > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/su.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
+fi
+if [ -e "/storage/emulated/0/AKT/AKT" ]; then
+grep -v "sleep" /system/etc/AKT/NLB_balanced > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /storage/emulated/0/AKT/AKT
+fi
 chmod 777 /system/etc/AKT/NLB_balanced
 clear
 sh /system/etc/AKT/NLB_balanced
 clear
-echo " Installation finished... For additional information and questions, please visit our XDA thread"
-sleep 5;
+echo " Installation finished... "
+echo " For additional information and questions, please visit our XDA thread"
+sleep 5; main_menu_op3;
 exit;;
-4 ) mount -o remount,rw /system 2>/dev/null
-cat /system/etc/AKT/PZ_balanced > /system/etc/init.d/99AKT
+5 ) #HawkPepper 
+$BB mount -o remount,rw /system 2>/dev/null
+mount -o remount,rw /system 2>/dev/null
+if [ -e "/system/su.d/99AKT" ]; then
+grep -v "sleep" /system/etc/AKT/HawkPepper > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/su.d/99AKT
+chmod 700 /system/su.d/99AKT
+fi
+if [ -e "/system/etc/init.d/99AKT" ]; then
+grep -v "sleep" /system/etc/AKT/HawkPepper > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/su.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
+fi
+if [ -e "/storage/emulated/0/AKT/AKT" ]; then
+grep -v "sleep" /system/etc/AKT/HawkPepper > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /storage/emulated/0/AKT/AKT
+fi
+chmod 777 /system/etc/AKT/HawkPepper
+clear
+sh /system/etc/AKT/HawkPepper
+clear
+echo " Installation finished... "
+echo " For additional information and questions, please visit our XDA thread"
+sleep 5; main_menu_op3;
+exit;;
+6 ) #Project Zhana Balanced
+$BB mount -o remount,rw /system 2>/dev/null
+mount -o remount,rw /system 2>/dev/null
+if [ -e "/system/su.d/99AKT" ]; then
+grep -v "sleep" /system/etc/AKT/PZ_balanced > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/su.d/99AKT
+chmod 700 /system/su.d/99AKT
+fi
+if [ -e "/system/etc/init.d/99AKT" ]; then
+grep -v "sleep" /system/etc/AKT/PZ_balanced > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/su.d/99AKT
+chmod 777 /system/etc/init.d/99AKT
+fi
+if [ -e "/storage/emulated/0/AKT/AKT" ]; then
+grep -v "sleep" /system/etc/AKT/PZ_balanced > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /storage/emulated/0/AKT/AKT
+fi
 chmod 777 /system/etc/AKT/PZ_balanced
 clear
 sh /system/etc/AKT/PZ_balanced
 clear
-echo " Installation finished... For additional information and questions, please visit our XDA thread"
-sleep 5;
+echo " Installation finished... "
+echo " For additional information and questions, please visit our XDA thread"
+sleep 5; main_menu_op3;
 exit;;
-5 ) echo "Coming soon"
+7 ) #Project XANA Balanced
+$BB mount -o remount,rw /system 2>/dev/null
+mount -o remount,rw /system 2>/dev/null
+if [ -e "/system/su.d/99AKT" ]; then
+grep -v "sleep" /system/etc/AKT/PX_balanced > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/su.d/99AKT
+chmod 700 /system/su.d/99AKT
+fi
+if [ -e "/system/etc/init.d/99AKT" ]; then
+grep -v "sleep" /system/etc/AKT/PX_balanced > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/su.d/99AKT
+chmod 777 /system/etc/init.d/99AKT
+fi
+if [ -e "/storage/emulated/0/AKT/AKT" ]; then
+grep -v "sleep" /system/etc/AKT/PX_balanced > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /storage/emulated/0/AKT/AKT
+fi
+chmod 777 /system/etc/AKT/PX_balanced
+clear
+sh /system/etc/AKT/PX_balanced
+clear
+echo " Installation finished... "
+echo " For additional information and questions, please visit our XDA thread"
+sleep 5; main_menu_op3;
+exit;;
+8 ) echo "Coming soon"
 echo " You tell me what to add here"
-sleep 2;;
-6 ) clear; main_menu;;
-7 ) break ;;
+sleep 2; main_menu_op3;
+exit;;
+9 ) clear; main_menu_op3;;
+* ) echo " Please, enter a valid option..."
+sleep 2
+clear;;
+esac
+# }
+done
+}
+function BalancedOP3T
+{
+while true; do
+echo -e "\e[01;91m   UP  Less Battery / More Performance \e[00;37m"
+echo -e "\e[01;33m   | \e[00;37m"
+echo -e "\e[01;93m   | \e[00;37m"
+echo -e "\e[01;92m DOWN  More Battery / Less Performance \e[00;37m"
+echo ""
+sleep 1.5
+echo -e "\e[02;91m 1.) Fusion Reborn by @Patalao \e[00;37m"
+echo -e "\e[02;91m 2.) GhostPepper by @Asiier \e[00;37m"
+echo -e "\e[01;31m 3.) Fusion Balanced by @Patalao \e[00;37m"
+echo -e "\e[02;33m 4.) Nameless Balanced by @Senthil360 \e[00;37m"
+echo -e "\e[01;93m 5.) HawkPepper by @Asiier \e[00;37m"
+echo -e "\e[01;92m 6.) Project by Zhana Balanced by @Asiier \e[00;37m"
+echo -e "\e[01;92m 7.) Project by X.A.N.A Balanced by @Asiier \e[00;37m"
+echo -e "\e[01;90m 8.) Additional tweaks... \e[00;37m"
+echo -e "\e[01;94m 9.) Main menu \e[00;37m"
+echo ""
+echo $divider
+echo ""
+echo -n "Please select a profile:"
+read option
+echo ""
+case $option in
+1 ) #FusionR
+$BB mount -o remount,rw /system 2>/dev/null
+mount -o remount,rw /system 2>/dev/null
+if [ -e "/system/su.d/99AKT" ]; then
+grep -v "sleep" /system/etc/AKT/FusionR > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/su.d/99AKT
+chmod 700 /system/su.d/99AKT
+fi
+if [ -e "/system/etc/init.d/99AKT" ]; then
+grep -v "sleep" /system/etc/AKT/FusionR > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/su.d/99AKT
+chmod 777 /system/etc/init.d/99AKT
+fi
+if [ -e "/storage/emulated/0/AKT/AKT" ]; then
+grep -v "sleep" /system/etc/AKT/FusionR > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /storage/emulated/0/AKT/AKT
+fi
+chmod 777 /system/etc/AKT/FusionR
+clear
+sh /system/etc/AKT/FusionR
+clear
+echo " Installation finished... "
+echo " For additional information and questions, please visit our XDA thread"
+sleep 5; main_menu_op3;
+exit;;
+2 ) #GhostPepper
+$BB mount -o remount,rw /system 2>/dev/null
+mount -o remount,rw /system 2>/dev/null
+if [ -e "/system/su.d/99AKT" ]; then
+grep -v "sleep" /system/etc/AKT/GhostPepperT > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/su.d/99AKT
+chmod 700 /system/su.d/99AKT
+fi
+if [ -e "/system/etc/init.d/99AKT" ]; then
+grep -v "sleep" /system/etc/AKT/GhostPepperT > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/su.d/99AKT
+chmod 777 /system/etc/init.d/99AKT
+fi
+if [ -e "/storage/emulated/0/AKT/AKT" ]; then
+grep -v "sleep" /system/etc/AKT/GhostPepperT > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /storage/emulated/0/AKT/AKT
+fi
+chmod 777 /system/etc/AKT/GhostPepperT
+clear
+sh /system/etc/AKT/GhostPepperT
+clear
+echo " Installation finished... "
+echo " For additional information and questions, please visit our XDA thread"
+sleep 5; main_menu_op3t;
+exit;;
+3 ) #Fusion Balanced
+$BB mount -o remount,rw /system 2>/dev/null
+mount -o remount,rw /system 2>/dev/null
+if [ -e "/system/su.d/99AKT" ]; then
+grep -v "sleep" /system/etc/AKT/FusionBT > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/su.d/99AKT
+chmod 700 /system/su.d/99AKT
+fi
+if [ -e "/system/etc/init.d/99AKT" ]; then
+grep -v "sleep" /system/etc/AKT/FusionBT > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/su.d/99AKT
+chmod 777 /system/etc/init.d/99AKT
+fi
+if [ -e "/storage/emulated/0/AKT/AKT" ]; then
+grep -v "sleep" /system/etc/AKT/FusionBT > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /storage/emulated/0/AKT/AKT
+fi
+chmod 777 /system/etc/AKT/FusionBT
+clear
+sh /system/etc/AKT/FusionBT
+clear
+echo " Installation finished... "
+echo " For additional information and questions, please visit our XDA thread"
+sleep 5; main_menu_op3t;
+exit;;
+4 ) #Nameless Balanced 
+$BB mount -o remount,rw /system 2>/dev/null
+mount -o remount,rw /system 2>/dev/null
+if [ -e "/system/su.d/99AKT" ]; then
+grep -v "sleep" /system/etc/AKT/NLB_balancedT > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/su.d/99AKT
+chmod 700 /system/su.d/99AKT
+fi
+if [ -e "/system/etc/init.d/99AKT" ]; then
+grep -v "sleep" /system/etc/AKT/NLB_balancedT > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/su.d/99AKT
+chmod 777 /system/etc/init.d/99AKT
+fi
+if [ -e "/storage/emulated/0/AKT/AKT" ]; then
+grep -v "sleep" /system/etc/AKT/NLB_balancedT > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /storage/emulated/0/AKT/AKT
+fi
+chmod 777 /system/etc/AKT/NLB_balancedT
+clear
+sh /system/etc/AKT/NLB_balancedT
+clear
+echo " Installation finished... "
+echo " For additional information and questions, please visit our XDA thread"
+sleep 5; main_menu_op3t;
+exit;;
+5 ) #HawkPepper 
+$BB mount -o remount,rw /system 2>/dev/null
+mount -o remount,rw /system 2>/dev/null
+if [ -e "/system/su.d/99AKT" ]; then
+grep -v "sleep" /system/etc/AKT/HawkPepperT > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/su.d/99AKT
+chmod 700 /system/su.d/99AKT
+fi
+if [ -e "/system/etc/init.d/99AKT" ]; then
+grep -v "sleep" /system/etc/AKT/HawkPepperT > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/su.d/99AKT
+chmod 777 /system/etc/init.d/99AKT
+fi
+if [ -e "/storage/emulated/0/AKT/AKT" ]; then
+grep -v "sleep" /system/etc/AKT/HawkPepperT > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /storage/emulated/0/AKT/AKT
+fi
+chmod 777 /system/etc/AKT/HawkPepperT
+clear
+sh /system/etc/AKT/HawkPepperT
+clear
+echo " Installation finished... "
+echo " For additional information and questions, please visit our XDA thread"
+sleep 5; main_menu_op3t;
+exit;;
+6 ) #Project Zhana Balanced
+$BB mount -o remount,rw /system 2>/dev/null
+mount -o remount,rw /system 2>/dev/null
+if [ -e "/system/su.d/99AKT" ]; then
+grep -v "sleep" /system/etc/AKT/PZ_balancedT > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/su.d/99AKT
+chmod 700 /system/su.d/99AKT
+fi
+if [ -e "/system/etc/init.d/99AKT" ]; then
+grep -v "sleep" /system/etc/AKT/PZ_balancedT > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/su.d/99AKT
+chmod 777 /system/etc/init.d/99AKT
+fi
+if [ -e "/storage/emulated/0/AKT/AKT" ]; then
+grep -v "sleep" /system/etc/AKT/PZ_balancedT > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /storage/emulated/0/AKT/AKT
+fi
+chmod 777 /system/etc/AKT/PZ_balancedT
+clear
+sh /system/etc/AKT/PZ_balancedT
+clear
+echo " Installation finished... "
+echo " For additional information and questions, please visit our XDA thread"
+sleep 5; main_menu_op3t;
+exit;;
+7 ) #Project XANA Balanced
+$BB mount -o remount,rw /system 2>/dev/null
+mount -o remount,rw /system 2>/dev/null
+if [ -e "/system/su.d/99AKT" ]; then
+grep -v "sleep" /system/etc/AKT/PX_balancedT > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/su.d/99AKT
+chmod 700 /system/su.d/99AKT
+fi
+if [ -e "/system/etc/init.d/99AKT" ]; then
+grep -v "sleep" /system/etc/AKT/PX_balancedT > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/su.d/99AKT
+chmod 777 /system/etc/init.d/99AKT
+fi
+if [ -e "/storage/emulated/0/AKT/AKT" ]; then
+grep -v "sleep" /system/etc/AKT/PX_balancedT > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /storage/emulated/0/AKT/AKT
+fi
+chmod 777 /system/etc/AKT/PX_balancedT
+clear
+sh /system/etc/AKT/PX_balancedT
+clear
+echo " Installation finished... "
+echo " For additional information and questions, please visit our XDA thread"
+sleep 5; main_menu_op3t;
+exit;;
+8 ) echo "Coming soon"
+echo " You tell me what to add here"
+sleep 2; main_menu_op3t;
+exit;;
+9 ) clear; main_menu_op3t;;
+* ) echo " Please, enter a valid option..."
+sleep 2
+clear;;
+esac
+# }
+done
+}
+function EAS_OP3
+{
+while true; do
+echo -e "\e[01;91m   UP  Less Battery / More Performance \e[00;37m"
+echo -e "\e[01;33m   | \e[00;37m"
+echo -e "\e[01;93m   | \e[00;37m"
+echo -e "\e[01;92m DOWN  More Battery / Less Performance \e[00;37m"
+echo ""
+sleep 1.5
+echo -e "\e[01;91m 1.) Burnout EAS by @Mostafa Wael \e[00;37m"
+echo -e "\e[01;90m 2.) Additional tweaks... \e[00;37m"
+echo -e "\e[01;94m 3.) Main menu \e[00;37m"
+echo ""
+echo $divider
+echo ""
+echo -n "Please select a profile:"
+read option
+echo ""
+case $option in
+1 ) #Burnout EAS
+$BB mount -o remount,rw /system 2>/dev/null
+mount -o remount,rw /system 2>/dev/null
+if [ -e "/system/su.d/99AKT" ]; then
+grep -v "sleep" /system/etc/AKT/BEF > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/su.d/99AKT
+chmod 700 /system/su.d/99AKT
+fi
+if [ -e "/system/etc/init.d/99AKT" ]; then
+grep -v "sleep" /system/etc/AKT/BEF > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/su.d/99AKT
+chmod 777 /system/etc/init.d/99AKT
+fi
+if [ -e "/storage/emulated/0/AKT/AKT" ]; then
+grep -v "sleep" /system/etc/AKT/BEF > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /storage/emulated/0/AKT/AKT
+fi
+chmod 777 /system/etc/AKT/BEF
+clear
+sh /system/etc/AKT/BEF
+clear
+echo " Installation finished... "
+echo " For additional information and questions, please visit our XDA thread"
+sleep 5; main_menu_op3;
+exit;;
+2 ) #Burnout PR3.5 
+$BB mount -o remount,rw /system 2>/dev/null
+mount -o remount,rw /system 2>/dev/null
+if [ -e "/system/su.d/99AKT" ]; then
+grep -v "sleep" /system/etc/AKT/PZ_battery > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/su.d/99AKT
+chmod 700 /system/su.d/99AKT
+fi
+if [ -e "/system/etc/init.d/99AKT" ]; then
+grep -v "sleep" /system/etc/AKT/PZ_battery > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/su.d/99AKT
+chmod 777 /system/etc/init.d/99AKT
+fi
+if [ -e "/storage/emulated/0/AKT/AKT" ]; then
+grep -v "sleep" /system/etc/AKT/PZ_battery > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /storage/emulated/0/AKT/AKT
+fi
+chmod 777 /system/etc/AKT/PZ_battery
+clear
+sh /system/etc/AKT/PZ_battery
+clear
+if [ -e "/system/su.d/99AKT" ]; then
+grep -v "sleep" /system/etc/AKT/BPN > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/su.d/99AKT
+chmod 700 /system/su.d/99AKT
+fi
+if [ -e "/system/etc/init.d/99AKT" ]; then
+grep -v "sleep" /system/etc/AKT/BPN > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/su.d/99AKT
+chmod 777 /system/etc/init.d/99AKT
+fi
+if [ -e "/storage/emulated/0/AKT/AKT" ]; then
+grep -v "sleep" /system/etc/AKT/BPN > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /storage/emulated/0/AKT/AKT
+fi
+chmod 777 /system/etc/AKT/BPN
+clear
+sh /system/etc/AKT/BPN
+clear
+echo " Installation finished... "
+echo " For additional information and questions, please visit our XDA thread"
+sleep 5; main_menu_op3;
+exit;;
+3 )  #Nameless Performance
+$BB mount -o remount,rw /system 2>/dev/null
+mount -o remount,rw /system 2>/dev/null
+if [ -e "/system/su.d/99AKT" ]; then
+grep -v "sleep" /system/etc/AKT/NLB_performance > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/su.d/99AKT
+chmod 700 /system/su.d/99AKT
+fi
+if [ -e "/system/etc/init.d/99AKT" ]; then
+grep -v "sleep" /system/etc/AKT/NLB_performance > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/su.d/99AKT
+chmod 777 /system/etc/init.d/99AKT
+fi
+if [ -e "/storage/emulated/0/AKT/AKT" ]; then
+grep -v "sleep" /system/etc/AKT/NLB_performance > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /storage/emulated/0/AKT/AKT
+fi
+chmod 777 /system/etc/AKT/NLB_performance
+clear
+sh /system/etc/AKT/NLB_performance
+clear
+echo " Installation finished... "
+echo " For additional information and questions, please visit our XDA thread"
+sleep 5; main_menu_op3;
+exit;;
+8 ) clear; main_menu_op3t;;
 * ) echo " Please, enter a valid option..."
 sleep 2
 clear;;
@@ -231,13 +1092,22 @@ function Remove
 {
 echo ""
 chmod 000 /system/etc/init.d/99AKT
+chmod 000 /system/su.d/99AKT
+rm -rf /system/su.d/99AKT
 rm -rf /system/etc/init.d/99AKT
 rm -rf /system/etc/AKT
 rm -rf /system/bin/AKT
-echo -e "\e[01;1m Permission resetted... \e[00;37m"
-echo -e "\e[01;1m Files removed from /sytem ... \e[00;37m"
-echo -e "\e[01;1m Please, reboot the device for fully removing the tweaks... \e[00;37m"
+rm -rf /system/bin/AKT3
+rm -rf /system/bin/ATT
+rm -rf /storage/emulated/0/AKT
+if [ -e /data/system/current_profile ]; then
+  rm -rf /data/system/current_profile
+fi
+echo -e "\e[01;31m Permission resetted... \e[00;37m"
+echo -e "\e[01;31m Files removed from /sytem ... \e[00;37m"
+echo -e "\e[01;31m Please, reboot the device for fully removing the tweaks... \e[00;37m"
 sleep 3
+$BB mount -o remount,ro /system 2>/dev/null
 mount -o remount,ro /system 2>/dev/null
 clear;
 exit
@@ -245,57 +1115,219 @@ exit
 function Disable
 {
 echo ""
+$BB mount -o remount,rw /system 2>/dev/null
 mount -o remount,rw /system 2>/dev/null
-cat /system/etc/AKT/DisableInitd > /system/ect/init.d/99AKT
+cat /system/etc/AKT/DisableInitd > /system/etc/init.d/99AKT
+cat /system/etc/AKT/DisableInitd > /system/su.d/99AKT
+cat /system/etc/AKT/DisableInitd > /storage/emulated/0/AKT
+if [ -e /data/system/current_profile ]; then
+   echo *None* | tee /data/system/current_profile
+fi
 chmod 644 /system/etc/init.d/99AKT
-echo -e "\e[01;1m Permission resetted... \e[00;37m"
-echo -e "\e[01;1m File overwritten ... \e[00;37m"
-echo -e "\e[01;1m It's recommended to perform a reboot for disabling the tweaks \e[00;37m"
+chmod 644 /system/su.d/99AKT
+echo -e "\e[01;31m Permission resetted... \e[00;37m"
+echo -e "\e[01;31m File overwritten ... \e[00;37m"
+echo -e "\e[01;31m It's recommended to perform a reboot for disabling the tweaks \e[00;37m"
 sleep 2
-echo -e "\e[01;1m Restoring stock values ... \e[00;37m"
+echo -e "\e[02;39m Restoring stock values ... \e[00;37m"
 sleep 3
 chmod 777 /system/etc/AKT/Stock
 clear
 sh /system/etc/AKT/Stock
+clear
+echo -e "\e[01;31m Please reboot your device!! \e[00;37m"
+sleep 3
 clear;
-exit
  }
-function main_menu
+function main_menu_op3
 {
-option=0
-until [ "$option" = "6" ]; do
+while true; do
 clear
 echo ""
 echo $divider
-echo -e "\e[01;36m   -All-in-One Project- \e[00;37m"
-echo -e "\e[01;36m        - A·K·T -   \e[00;37m"
+echo -e "\e[01;36m < Advanced·Kernel·Tweaks > \e[00;37m"
+echo -e "\e[01;36m          - A·K·T -   \e[00;37m"
+echo -e "\e[01;36m  -for OP3 and SD820 Devices-  \e[00;37m"
 echo $divider
 echo ""
-echo -e "\e[01;42m 1.) Battery \e[00;37m"
-echo -e "\e[01;44m 2.) Balanced \e[00;37m"
-echo -e "\e[01;41m 3.) Performance \e[00;37m"
-echo -e "\e[01;31m 4.) Disable Tweaks \e[00;37m"
-echo -e "\e[01;31m 5.) Remove A·K·T! \e[00;37m"
-echo -e "\e[01;97m 6.) Exit \e[00;37m"
+echo -e "\e[01;32m  1. Battery \e[00;37m"
 echo ""
+echo -e "\e[01;34m  2. Balanced \e[00;37m"
+echo ""
+echo -e "\e[01;31m  3. Performance \e[00;37m"
+echo ""
+echo $divider
+echo ""
+echo -e "\e[01;37m 4. Disable Tweaks \e[00;37m"
+echo ""
+echo -e "\e[01;37m 5. Remove A·K·T! \e[00;37m"
+echo ""
+echo -e "\e[00;36m 6. Exit \e[00;37m"
+echo ""
+if [ -e /data/system/current_profile ]; then
+ echo $divider
+ echo ""
+ string3=$($BB cat /data/system/current_profile)
+ echo -e " Current Profile:  \e[01;94m'\e[04;94m$string3\e[00;37m\e[01;94m'\e[00;37m"
+ echo ""
+ echo $divider
+fi
 echo -n "Enter choice: "
 read option
 echo ""
 case $option in
-	1 ) clear; Battery ;;
-	2 ) clear; Balanced ;;
-	3 ) clear; Performance ;;
+	1 ) clear; BatteryOP3 ;;
+	2 ) clear; BalancedOP3 ;;
+	3 ) clear; PerformanceOP3 ;;
 	4 ) clear; Disable ;;
 	5 ) clear; Remove ;;
-	6 ) clear; exit ; mount -o remount,ro /system 2>/dev/null ;; 
+	6 ) clear; exit ; $BB mount -o remount,ro /system 2>/dev/null ; mount -o remount,ro /system 2>/dev/null ;; 
 	* ) echo " Please, enter a valid option..."
 	sleep 2
 	clear;;
 esac
 done
  }
-
-main_menu
-exit
+ function main_menu_op3t
+{
+while true; do
+clear
+echo ""
+echo $divider
+echo -e "\e[01;36m < Advanced·Kernel·Tweaks > \e[00;37m"
+echo -e "\e[01;36m          - A·K·T -   \e[00;37m"
+echo -e "\e[01;36m  for OP3T and SD821 Devices  \e[00;37m"
+echo $divider
+echo ""
+echo -e "\e[01;32m  1. Battery \e[00;37m"
+echo ""
+echo -e "\e[01;34m  2. Balanced \e[00;37m"
+echo ""
+echo -e "\e[01;31m  3. Performance \e[00;37m"
+echo ""
+echo $divider
+echo ""
+echo -e "\e[01;37m 4. Disable Tweaks \e[00;37m"
+echo ""
+echo -e "\e[01;37m 5. Remove A·K·T! \e[00;37m"
+echo ""
+echo -e "\e[00;36m 6. Exit \e[00;37m"
+echo ""
+if [ -e /data/system/current_profile ]; then
+ echo $divider
+ echo ""
+ string3=$($BB cat /data/system/current_profile)
+ echo -e " Current Profile:  \e[01;94m'\e[04;94m$string3\e[00;37m\e[01;94m'\e[00;37m"
+ echo ""
+ echo $divider
+fi
+echo -n "Enter choice: "
+read option
+echo ""
+case $option in
+	1 ) clear; BatteryOP3T ;;
+	2 ) clear; BalancedOP3T ;;
+	3 ) clear; PerformanceOP3T ;;
+	4 ) clear; Disable ;;
+	5 ) clear; Remove ;;
+	6 ) clear; exit ; $BB mount -o remount,ro /system 2>/dev/null ; mount -o remount,ro /system 2>/dev/null ;; 
+	* ) echo " Please, enter a valid option..."
+	sleep 2
+	clear;;
 esac
+done
+ }
+ function other
+{
+echo ""
+$BB mount -o remount,rw /system 2>/dev/null
+mount -o remount,rw /system 2>/dev/null
+echo -e "\e[01;31m We don't support any other device. \e[00;37m"
+sleep 2
+echo -e "\e[01;31m If you still want to use the tweaks select from above the device most similar to your device. \e[00;37m"
+sleep 3
+echo -e "\e[01;31m But expect NO SUPPORT from us!!! \e[00;37m"
+sleep 2
+sleep 4
+echo -e "\e[02;39m Going back to Main Menu ... \e[00;37m"
+sleep 5
+clear
+sleep 2; main_menu;
+exit;
+ }
+ function reapply
+{
+echo ""
+$BB mount -o remount,rw /system 2>/dev/null
+mount -o remount,rw /system 2>/dev/null
+clear
+if [ -e "/system/su.d/99AKT" ]; then
+chmod 700 /system/su.d/99AKT
+fi
+if [ -e "/system/etc/init.d/99AKT" ]; then
+chmod 777 /system/etc/init.d/99AKT
+fi
+if [ -e "/storage/emulated/0/AKT/AKT" ]; then
+sh /storage/emulated/0/AKT/AKT
+clear
+else 
+if [ -e "/system/etc/init.d/99AKT" ]; then
+sh /system/etc/init.d/99AKT
+clear
+else
+echo -e "\e[01;31m Files not found or empty, check If the installation was succeful or try to Apply the profile at least onces \e[00;37m"
+sleep 4
+fi
+fi
+sleep 2; main_menu;
+exit;
+ }
+ function main_menu
+{
+while true; do
+clear
+echo ""
+echo $divider
+echo -e "\e[01;36m < Advanced·Kernel·Tweaks > \e[00;37m"
+echo -e "\e[01;36m          - A·K·T -   \e[00;37m"
+echo $divider
+echo -e "\e[01;36m        - Main Menu -  \e[00;37m"
+echo -e "\e[01;36m  Please select your device:  \e[00;37m"
+echo ""
+echo -e "\e[01;32m  1. OP3 / Snapdragon 820 Device \e[00;37m"
+echo ""
+echo -e "\e[01;34m  2. OP3T / Snapdragon 821 Device \e[00;37m"
+echo ""
+echo -e "\e[01;35m  3. Other Device \e[00;37m"
+echo ""
+echo -e "\e[01;37m  4. Reapply Current Profile \e[00;37m"
+echo ""
+echo -e "\e[01;31m  5. Exit \e[00;37m"
+echo ""
+if [ -e /data/system/current_profile ]; then
+ echo $divider
+ echo ""
+ string3=$($BB cat /data/system/current_profile)
+ echo -e " Current Profile:  \e[01;94m'\e[04;94m$string3\e[00;37m\e[01;94m'\e[00;37m"
+ echo ""
+ echo $divider
+fi
+echo -n "Enter choice: "
+read option
+echo ""
+case $option in
+	1 ) clear; main_menu_op3 ;;
+	2 ) clear; main_menu_op3t ;;
+	3 ) clear; other ;;
+	4 ) clear; reapply ;;
+	5 ) clear; exit ; $BB mount -o remount,ro /system 2>/dev/null ; mount -o remount,ro /system 2>/dev/null ;; 
+	* ) echo " Please, enter a valid option..."
+	sleep 2
+	clear;;
+esac
+done
+ }
+ 
+while true; do
+main_menu
 done

@@ -1,8 +1,8 @@
 #!/system/bin/sh
 #NAMELESS_PROFILE_V5_23rd_November
-#"Nameless" Tweaks for OP3 by @Senthil360
+#"Nameless" Tweaks for OP3T by @Senthil360
 #Thanks to @Asiier ,  @patalao and @Mostafa Wael
-#This profile works in a way which takes advantage of the HMP system of SD 820,
+#This profile works in a way which takes advantage of the HMP system of SD 821,
 #LITTLE cluster frequency are kept at low to medium levels 
 # BIG Cluster comes into play when load is around 90 to help out LITTLE and ease the load 
 #So eventually after load is reduced  both clusters idle soon,  thus saving a lot of Battery
