@@ -1,6 +1,6 @@
 #!/system/bin/sh
-#Interactive Governor tweaks for OnePlus 3.
-#Stock are the stock settings from ElementalX kernel
+#Interactive Governor tweaks for OnePlus 5.
+#Stock are the stock settings from Stock kernel
 #Scripts made by Senthil360 and Asiier and changed by Mostafa Wael
 #Credits for @Asiier/@Mostafa Wael/@Senthil360/@patalao
 #TWEAKS_BEGIN
@@ -25,10 +25,10 @@ if grep -q 'ro.build.version.sdk=24' /system/build.prop; then
 	sleep 0.3
 	echo N detected... Applying proper settings
 fi
-if grep -q 'ro.build.version.sdk=23' /system/build.prop; then
-	echo Android Marshmallow 6.0.1 detected!
+if grep -q 'ro.build.version.sdk=26' /system/build.prop; then
+	echo Android Oreo 8.0.0 detected!
 	sleep 0.3
-	echo MM detected... Settings may not act as expected!
+	echo O detected... Settings may not act as expected!
 fi
 echo ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 sleep 0.3
