@@ -36,15 +36,15 @@ set_perm(0, 0, 0777, "/system/etc/AKT/BEF");
 set_perm(0, 0, 0777, "/system/etc/AKT/Stock");
 set_perm(0, 0, 0777, "/system/etc/AKT/busybox");
 run_program("/sbin/busybox", "unmount", "/system");
-ui_print(" ") 
+ui_print(" "); 
 ui_print(" Open your Terminal app");
 ui_print("     and introduce:    ");
-ui_print(" ") 
+ui_print(" "); 
 ui_print(" su");
-ui_print(" ") 
+ui_print(" "); 
 ui_print(" AKT");
-ui_print(" ") 
+ui_print(" "); 
 ui_print(" ==========================");
-ui_print(" ") 
+ui_print(" "); 
 ui_print(" Thanks for Flashing");
 ui_print("       -A*K*T-      ");
