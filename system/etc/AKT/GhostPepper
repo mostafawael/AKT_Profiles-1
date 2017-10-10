@@ -9,7 +9,7 @@
 #Notes: Please give credit when using this in your work!#TWEAKS_BEGIN
 echo ""
 echo -----------------------------------------------
-echo Applying 'FusionB (Balanced Profile)'
+echo Applying 'GhostPepper 2.0 (balanced profile)'
 echo Advanced Kernel Settings
 echo -----------------------------------------------
 sleep 0.5
@@ -408,7 +408,8 @@ echo " Done,  press ENTER then close"
 sleep 4
 
 #################################################
-#Modded by patalao
+#Modded by Asiier
+#Ported by Mostafa Wael
 #Please say thanks and give proper credits if you're using this profile. 
 #Credits
 #*soniCron *Alcolawl *RogerF81 *Asiier *Mostafa Wael *Senthil360 and all of those that have share their profiles on Nexus 5X/6P Advanced Interactive Tweaks respective threads. 
