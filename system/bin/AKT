@@ -65,7 +65,7 @@ clear
 echo " Installation finished... "
 echo " For additional information and questions, please visit our XDA thread"
 sleep 10
-sleep 5; main_menu_op3;
+sleep 5; main_menu_op5;
 exit;;
 2 ) #Nameless_Battery 
 $BB mount -o remount,rw /system 2>/dev/null
@@ -87,7 +87,7 @@ sh /system/etc/AKT/NLB_battery
 clear
 echo " Installation finished... "
 echo " For additional information and questions, please visit our XDA thread"
-sleep 5; main_menu_op3;
+sleep 5; main_menu_op5;
 exit;;
 3 ) #FairPark
 $BB mount -o remount,rw /system 2>/dev/null
@@ -109,7 +109,7 @@ sh /system/etc/AKT/FairPark
 clear
 echo " Installation finished... "
 echo " For additional information and questions, please visit our XDA thread"
-sleep 5; main_menu_op3;
+sleep 5; main_menu_op5;
 exit;;
 4 ) #Fusion Conservative
 $BB mount -o remount,rw /system 2>/dev/null
@@ -131,7 +131,7 @@ sh /system/etc/AKT/FusionC
 clear
 echo " Installation finished... "
 echo " For additional information and questions, please visit our XDA thread"
-sleep 5; main_menu_op3;
+sleep 5; main_menu_op5;
 exit;;
 5 ) #Project_XANA_Battery
 $BB mount -o remount,rw /system 2>/dev/null
@@ -153,7 +153,7 @@ sh /system/etc/AKT/PX_battery
 clear
 echo " Installation finished... "
 echo " For additional information and questions, please visit our XDA thread"
-sleep 5; main_menu_op3;
+sleep 5; main_menu_op5;
 exit;;
 6 ) #Project_XANA_Extreme
 $BB mount -o remount,rw /system 2>/dev/null
@@ -175,7 +175,7 @@ sh /system/etc/AKT/PX_battery_extreme
 clear
 echo " Installation finished... "
 echo " For additional information and questions, please visit our XDA thread"
-sleep 5; main_menu_op3;
+sleep 5; main_menu_op5;
 exit;;
 7 ) #Soilwork_battery
 $BB mount -o remount,rw /system 2>/dev/null
@@ -198,9 +198,9 @@ clear
 echo " Installation finished... "
 echo " For additional information and questions, please visit our XDA thread"
 sleep 10
-sleep 5; main_menu_op3;
+sleep 5; main_menu_op5;
 exit;;
-8 ) clear; main_menu_op3;;
+8 ) clear; main_menu_op5;;
 * ) clear; echo " Please, enter a valid option..."; 
 sleep 2;
 clear;;
@@ -253,7 +253,7 @@ clear
 echo " Installation finished... "
 echo " For additional information and questions, please visit our XDA thread"
 sleep 10
-sleep 5; main_menu_op3;
+sleep 5; main_menu_op5;
 exit;;
 2 ) #Nameless_Battery 
 $BB mount -o remount,rw /system 2>/dev/null
@@ -275,7 +275,7 @@ sh /system/etc/AKT/NLB_batteryT
 clear
 echo " Installation finished... "
 echo " For additional information and questions, please visit our XDA thread"
-sleep 5; main_menu_op3;
+sleep 5; main_menu_op5;
 exit;;
 3 ) #FairPark
 $BB mount -o remount,rw /system 2>/dev/null
@@ -297,7 +297,7 @@ sh /system/etc/AKT/FairParkT
 clear
 echo " Installation finished... "
 echo " For additional information and questions, please visit our XDA thread"
-sleep 5; main_menu_op3;
+sleep 5; main_menu_op5;
 exit;;
 4 ) #Fusion Conservative
 $BB mount -o remount,rw /system 2>/dev/null
@@ -319,7 +319,7 @@ sh /system/etc/AKT/FusionCT
 clear
 echo " Installation finished... "
 echo " For additional information and questions, please visit our XDA thread"
-sleep 5; main_menu_op3;
+sleep 5; main_menu_op5;
 exit;;
 5 ) #Project_XANA_Battery
 $BB mount -o remount,rw /system 2>/dev/null
@@ -341,7 +341,7 @@ sh /system/etc/AKT/PX_batteryT
 clear
 echo " Installation finished... "
 echo " For additional information and questions, please visit our XDA thread"
-sleep 5; main_menu_op3;
+sleep 5; main_menu_op5;
 exit;;
 6 ) #Project_XANA_Extreme
 $BB mount -o remount,rw /system 2>/dev/null
@@ -363,14 +363,14 @@ sh /system/etc/AKT/PX_battery_extremeT
 clear
 echo " Installation finished... "
 echo " For additional information and questions, please visit our XDA thread"
-sleep 5; main_menu_op3;
+sleep 5; main_menu_op5;
 exit;;
 7 ) echo "Coming soon"
 echo " You tell me what to add here"
 sleep 2;
-clear; main_menu_op3;
+clear; main_menu_op5;
 exit;;
-8 ) clear; main_menu_op3;;
+8 ) clear; main_menu_op5;;
 * ) clear; echo " Please, enter a valid option..."; 
 sleep 2;
 clear;;
@@ -420,7 +420,7 @@ sh /system/etc/AKT/BEF
 clear
 echo " Installation finished... "
 echo " For additional information and questions, please visit our XDA thread"
-sleep 5; main_menu_op3;
+sleep 5; main_menu_op5;
 exit;;
 2 ) #Burnout PR3.5 
 $BB mount -o remount,rw /system 2>/dev/null
@@ -441,7 +441,7 @@ sh /system/etc/AKT/BPN
 clear
 echo " Installation finished... "
 echo " For additional information and questions, please visit our XDA thread"
-sleep 5; main_menu_op3;
+sleep 5; main_menu_op5;
 exit;;
 3 )  #Nameless Performance
 $BB mount -o remount,rw /system 2>/dev/null
@@ -463,7 +463,7 @@ sh /system/etc/AKT/NLB_performance
 clear
 echo " Installation finished... "
 echo " For additional information and questions, please visit our XDA thread"
-sleep 5; main_menu_op3;
+sleep 5; main_menu_op5;
 exit;;
 4 ) #Fusion Perfomance
 $BB mount -o remount,rw /system 2>/dev/null
@@ -485,12 +485,12 @@ sh /system/etc/AKT/FusionP
 clear
 echo " Installation finished... "
 echo " For additional information and questions, please visit our XDA thread"
-sleep 5; main_menu_op3;
+sleep 5; main_menu_op5;
 exit;;
 5 ) clear
 echo "Coming Soon"
 echo "You tell me what others tweaks you want me too add"
-sleep 5; main_menu_op3;
+sleep 5; main_menu_op5;
 exit;;
 6 ) clear; main_menu;;
 * ) echo " Please, enter a valid option..."
@@ -661,7 +661,7 @@ sh /system/etc/AKT/FusionR
 clear
 echo " Installation finished... "
 echo " For additional information and questions, please visit our XDA thread"
-sleep 5; main_menu_op3;
+sleep 5; main_menu_op5;
 exit;;
 2 ) #GhostPepper
 $BB mount -o remount,rw /system 2>/dev/null
@@ -683,7 +683,7 @@ sh /system/etc/AKT/GhostPepper
 clear
 echo " Installation finished... "
 echo " For additional information and questions, please visit our XDA thread"
-sleep 5; main_menu_op3;
+sleep 5; main_menu_op5;
 exit;;
 3 ) #Fusion Balanced
 $BB mount -o remount,rw /system 2>/dev/null
@@ -705,7 +705,7 @@ sh /system/etc/AKT/FusionB
 clear
 echo " Installation finished... "
 echo " For additional information and questions, please visit our XDA thread"
-sleep 5; main_menu_op3;
+sleep 5; main_menu_op5;
 exit;;
 4 ) #Nameless Balanced 
 $BB mount -o remount,rw /system 2>/dev/null
@@ -727,7 +727,7 @@ sh /system/etc/AKT/NLB_balanced
 clear
 echo " Installation finished... "
 echo " For additional information and questions, please visit our XDA thread"
-sleep 5; main_menu_op3;
+sleep 5; main_menu_op5;
 exit;;
 5 ) #HawkPepper 
 $BB mount -o remount,rw /system 2>/dev/null
@@ -749,7 +749,7 @@ sh /system/etc/AKT/HawkPepper
 clear
 echo " Installation finished... "
 echo " For additional information and questions, please visit our XDA thread"
-sleep 5; main_menu_op3;
+sleep 5; main_menu_op5;
 exit;;
 6 ) #Project Zhana Balanced
 $BB mount -o remount,rw /system 2>/dev/null
@@ -771,7 +771,7 @@ sh /system/etc/AKT/PZ_balanced
 clear
 echo " Installation finished... "
 echo " For additional information and questions, please visit our XDA thread"
-sleep 5; main_menu_op3;
+sleep 5; main_menu_op5;
 exit;;
 7 ) #Project XANA Balanced
 $BB mount -o remount,rw /system 2>/dev/null
@@ -793,7 +793,7 @@ sh /system/etc/AKT/PX_balanced
 clear
 echo " Installation finished... "
 echo " For additional information and questions, please visit our XDA thread"
-sleep 5; main_menu_op3;
+sleep 5; main_menu_op5;
 exit;;
 8 ) #Soilwork_balanced
 $BB mount -o remount,rw /system 2>/dev/null
@@ -816,9 +816,9 @@ clear
 echo " Installation finished... "
 echo " For additional information and questions, please visit our XDA thread"
 sleep 10
-sleep 5; main_menu_op3;
+sleep 5; main_menu_op5;
 exit;;
-9 ) clear; main_menu_op3;;
+9 ) clear; main_menu_op5;;
 * ) echo " Please, enter a valid option..."
 sleep 2
 clear;;
@@ -871,7 +871,7 @@ sh /system/etc/AKT/FusionR
 clear
 echo " Installation finished... "
 echo " For additional information and questions, please visit our XDA thread"
-sleep 5; main_menu_op3;
+sleep 5; main_menu_op5;
 exit;;
 2 ) #GhostPepper
 $BB mount -o remount,rw /system 2>/dev/null
@@ -1056,7 +1056,7 @@ sh /system/etc/AKT/BEF
 clear
 echo " Installation finished... "
 echo " For additional information and questions, please visit our XDA thread"
-sleep 5; main_menu_op3;
+sleep 5; main_menu_op5;
 exit;;
 2 ) #Burnout PR3.5 
 $BB mount -o remount,rw /system 2>/dev/null
@@ -1093,7 +1093,7 @@ sh /system/etc/AKT/BPN
 clear
 echo " Installation finished... "
 echo " For additional information and questions, please visit our XDA thread"
-sleep 5; main_menu_op3;
+sleep 5; main_menu_op5;
 exit;;
 3 )  #Nameless Performance
 $BB mount -o remount,rw /system 2>/dev/null
@@ -1115,7 +1115,7 @@ sh /system/etc/AKT/NLB_performance
 clear
 echo " Installation finished... "
 echo " For additional information and questions, please visit our XDA thread"
-sleep 5; main_menu_op3;
+sleep 5; main_menu_op5;
 exit;;
 8 ) clear; main_menu_op3t;;
 * ) echo " Please, enter a valid option..."
@@ -1176,7 +1176,7 @@ echo -e "\e[01;31m Please reboot your device!! \e[00;37m"
 sleep 3
 clear;
  }
-function main_menu_op3
+function main_menu_op5
 {
 while true; do
 clear
@@ -1184,7 +1184,7 @@ echo ""
 echo $divider
 echo -e "\e[01;36m < Advanced·Kernel·Tweaks > \e[00;37m"
 echo -e "\e[01;36m          - A·K·T -   \e[00;37m"
-echo -e "\e[01;36m  -for OP3 and SD820 Devices-  \e[00;37m"
+echo -e "\e[01;36m  -for OP5 and SD835 Devices-  \e[00;37m"
 echo $divider
 echo ""
 echo -e "\e[01;32m  1. Battery \e[00;37m"
@@ -1331,7 +1331,7 @@ echo $divider
 echo -e "\e[01;36m        - Main Menu -  \e[00;37m"
 echo -e "\e[01;36m  Please select your device:  \e[00;37m"
 echo ""
-echo -e "\e[01;32m  1. OP3 / Snapdragon 820 Device \e[00;37m"
+echo -e "\e[01;32m  1. OP5 / Snapdragon 835 Device \e[00;37m"
 echo ""
 echo -e "\e[01;34m  2. OP3T / Snapdragon 821 Device \e[00;37m"
 echo ""
@@ -1353,7 +1353,7 @@ echo -n "Enter choice: "
 read option
 echo ""
 case $option in
-	1 ) clear; main_menu_op3 ;;
+	1 ) clear; main_menu_op5 ;;
 	2 ) clear; main_menu_op3t ;;
 	3 ) clear; other ;;
 	4 ) clear; reapply ;;
