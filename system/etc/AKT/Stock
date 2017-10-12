@@ -31,6 +31,36 @@ if grep -q 'ro.build.version.sdk=23' /system/build.prop; then
 fi
 echo ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 sleep 0.3
+if [ -e "/proc/sys/kernel/sched_nr_migrate" ]; then
+    chmod 644 /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor
+    echo schedutil > /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor
+    chmod 444 /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor
+    chmod 644 /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+    echo schedutil /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+    chmod 444 /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+    echo 500 > /sys/devices/system/cpu/cpu0/cpufreq/schedutil/up_rate_limit_us
+    echo 10000 > /sys/devices/system/cpu/cpu0/cpufreq/schedutil/down_rate_limit_us
+    echo 2000 > /sys/devices/system/cpu/cpu4/cpufreq/schedutil/up_rate_limit_us
+    echo 5000 > /sys/devices/system/cpu/cpu4/cpufreq/schedutil/down_rate_limit_us
+    echo 1 > /dev/stune/top-app/schedtune.boost
+    echo 0 > /sys/module/cpu_boost/parameters/dynamic_stune_boost
+    echo 1 > /dev/stune/top-app/schedtune.prefer_idle
+    echo 0 > /dev/stune/background/schedtune.boost
+    echo 0 > /dev/stune/background/schedtune.prefer_idle
+    echo 0 > /dev/stune/foreground/schedtune.boost
+    echo 1 > /dev/stune/foreground/schedtune.prefer_idle
+    echo 32 > /proc/sys/kernel/sched_nr_migrate
+    echo 0 > /dev/stune/schedtune.prefer_idle
+    echo 1 > /proc/sys/kernel/sched_use_walt_task_util
+    echo 1 > /proc/sys/kernel/sched_use_walt_cpu_util
+    echo 15 > /proc/sys/kernel/sched_walt_init_task_load_pct
+    echo 10000000 > /proc/sys/kernel/sched_walt_cpu_high_irqload
+    echo 10000000 > /proc/sys/kernel/sched_latency_ns
+    echo 1000000 > /proc/sys/kernel/sched_wakeup_granularity_ns
+    echo 3000000 > /proc/sys/kernel/sched_min_granularity_ns
+    echo 32 > /proc/sys/kernel/sched_nr_migrate
+    echo stock settings applied! Please reboot!
+else
 #Apply settings to LITTLE cluster
 echo Applying settings to LITTLE Cluster...
 sleep 0.5
@@ -86,7 +116,38 @@ if [ -e "/sys/devices/system/cpu/cpu0/cpufreq/interactive/enable_prediction" ]; 
     chmod 644 /sys/devices/system/cpu/cpu0/cpufreq/interactive/enable_prediction
     echo 0 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/enable_prediction
 fi
+fi
 sleep 0.5
+if [ -e "/proc/sys/kernel/sched_nr_migrate" ]; then
+    chmod 644 /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor
+    echo schedutil > /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor
+    chmod 444 /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor
+    chmod 644 /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+    echo schedutil /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+    chmod 444 /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+    echo 500 > /sys/devices/system/cpu/cpu0/cpufreq/schedutil/up_rate_limit_us
+    echo 10000 > /sys/devices/system/cpu/cpu0/cpufreq/schedutil/down_rate_limit_us
+    echo 2000 > /sys/devices/system/cpu/cpu4/cpufreq/schedutil/up_rate_limit_us
+    echo 5000 > /sys/devices/system/cpu/cpu4/cpufreq/schedutil/down_rate_limit_us
+    echo 1 > /dev/stune/top-app/schedtune.boost
+    echo 0 > /sys/module/cpu_boost/parameters/dynamic_stune_boost
+    echo 1 > /dev/stune/top-app/schedtune.prefer_idle
+    echo 0 > /dev/stune/background/schedtune.boost
+    echo 0 > /dev/stune/background/schedtune.prefer_idle
+    echo 0 > /dev/stune/foreground/schedtune.boost
+    echo 1 > /dev/stune/foreground/schedtune.prefer_idle
+    echo 32 > /proc/sys/kernel/sched_nr_migrate
+    echo 0 > /dev/stune/schedtune.prefer_idle
+    echo 1 > /proc/sys/kernel/sched_use_walt_task_util
+    echo 1 > /proc/sys/kernel/sched_use_walt_cpu_util
+    echo 15 > /proc/sys/kernel/sched_walt_init_task_load_pct
+    echo 10000000 > /proc/sys/kernel/sched_walt_cpu_high_irqload
+    echo 10000000 > /proc/sys/kernel/sched_latency_ns
+    echo 1000000 > /proc/sys/kernel/sched_wakeup_granularity_ns
+    echo 3000000 > /proc/sys/kernel/sched_min_granularity_ns
+    echo 32 > /proc/sys/kernel/sched_nr_migrate
+    echo stock settings applied! Please reboot!
+else
 #Apply settings to Big cluster
 echo Applying settings to BIG Cluster
 sleep 0.2
@@ -145,6 +206,7 @@ if [ -e "/sys/devices/system/cpu/cpu4/cpufreq/interactive/enable_prediction" ]; 
     chmod 644 /sys/devices/system/cpu/cpu4/cpufreq/interactive/enable_prediction
     echo 0 > /sys/devices/system/cpu/cpu4/cpufreq/interactive/enable_prediction
 fi
+fi
 sleep 0.2
 echo "=========================================="
 echo Checking whether you are using a Lineage based ROM or not
@@ -185,6 +247,36 @@ echo Disabling TouchBoost
 else
     echo "*Not supported for your current Kernel*"
 fi
+if [ -e "/proc/sys/kernel/sched_nr_migrate" ]; then
+    chmod 644 /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor
+    echo schedutil > /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor
+    chmod 444 /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor
+    chmod 644 /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+    echo schedutil /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+    chmod 444 /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+    echo 500 > /sys/devices/system/cpu/cpu0/cpufreq/schedutil/up_rate_limit_us
+    echo 10000 > /sys/devices/system/cpu/cpu0/cpufreq/schedutil/down_rate_limit_us
+    echo 2000 > /sys/devices/system/cpu/cpu4/cpufreq/schedutil/up_rate_limit_us
+    echo 5000 > /sys/devices/system/cpu/cpu4/cpufreq/schedutil/down_rate_limit_us
+    echo 1 > /dev/stune/top-app/schedtune.boost
+    echo 0 > /sys/module/cpu_boost/parameters/dynamic_stune_boost
+    echo 1 > /dev/stune/top-app/schedtune.prefer_idle
+    echo 0 > /dev/stune/background/schedtune.boost
+    echo 0 > /dev/stune/background/schedtune.prefer_idle
+    echo 0 > /dev/stune/foreground/schedtune.boost
+    echo 1 > /dev/stune/foreground/schedtune.prefer_idle
+    echo 32 > /proc/sys/kernel/sched_nr_migrate
+    echo 0 > /dev/stune/schedtune.prefer_idle
+    echo 1 > /proc/sys/kernel/sched_use_walt_task_util
+    echo 1 > /proc/sys/kernel/sched_use_walt_cpu_util
+    echo 15 > /proc/sys/kernel/sched_walt_init_task_load_pct
+    echo 10000000 > /proc/sys/kernel/sched_walt_cpu_high_irqload
+    echo 10000000 > /proc/sys/kernel/sched_latency_ns
+    echo 1000000 > /proc/sys/kernel/sched_wakeup_granularity_ns
+    echo 3000000 > /proc/sys/kernel/sched_min_granularity_ns
+    echo 32 > /proc/sys/kernel/sched_nr_migrate
+    echo stock settings applied! Please reboot!
+else
 #Disable BCL
 echo Disabling BCL and Removing Perfd
 echo enable > /sys/devices/soc/soc:qcom,bcl/mode
@@ -232,6 +324,7 @@ if [ -e "/proc/sys/kernel/sched_freq_inc_notify" ]; then
 fi
 if [ -e "/proc/sys/kernel/sched_boost" ]; then
 	echo 0 > /proc/sys/kernel/sched_boost
+fi
 fi
 #Tweaks for other various Settings
 sleep 0.5
