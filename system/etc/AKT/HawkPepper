@@ -2,14 +2,14 @@
 #Author: Asiier
 #Settings By: Asiier
 #Device: One Plus 5
-#Codename: GhostPepper
+#Codename: HawkPepper
 #Build Status: Stable
 #Version: 2.0
 #Ported by: Mostafa Wael
 #Notes: Please give credit when using this in your work!#TWEAKS_BEGIN
 echo ""
 echo -----------------------------------------------
-echo Applying 'FusionB (Balanced Profile)'
+echo Applying 'HawkPepper 2.0 (balanced profile)'
 echo Advanced Kernel Settings
 echo -----------------------------------------------
 sleep 0.5
