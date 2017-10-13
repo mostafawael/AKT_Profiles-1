@@ -9,18 +9,18 @@ echo $divider
 echo -e "\e[01;36m   - All-in-One Project - \e[00;37m"
 echo -e "\e[01;36m - Advanced·Kernel·Tweaks - \e[00;37m"
 echo -e "\e[01;36m         - [A·K·T] -   \e[00;37m"
-echo -e "\e[01;36m      ~ Stable - 1.6 ~   \e[00;37m"
+echo -e "\e[01;36m      ~ Stable - 1.0 ~   \e[00;37m"
 echo $divider
 sleep 1
 echo ""
-echo -e "\e[01;36m *** By Asiier & Senthil360 *** \e[00;37m"
+echo -e "\e[01;36m *** By Mostafa Wael *** \e[00;37m"
 echo ""
 if ! [ -e "/storage/emulated/0/AKT/AKT" ]; then
 mkdir /storage/emulated/0/AKT && touch /storage/emulated/0/AKT/AKT
 fi
 sleep 1
 clear
-function BatteryOP3
+function BatteryOP5
 {
 while true; do
 echo -e "\e[01;91m   UP  Less Battery / More Performance \e[00;37m"
@@ -378,7 +378,7 @@ esac
 # }
  done
 }
-function PerformanceOP3
+function PerformanceOP5
 {
 while true; do
 echo -e "\e[01;91m   UP  Less Battery / More Performance \e[00;37m"
@@ -616,7 +616,7 @@ esac
 # }
  done
 }
-function BalancedOP3
+function BalancedOP5
 {
 while true; do
 echo -e "\e[01;91m   UP  Less Battery / More Performance \e[00;37m"
@@ -1213,9 +1213,9 @@ echo -n "Enter choice: "
 read option
 echo ""
 case $option in
-	1 ) clear; BatteryOP3 ;;
-	2 ) clear; BalancedOP3 ;;
-	3 ) clear; PerformanceOP3 ;;
+	1 ) clear; BatteryOP5 ;;
+	2 ) clear; BalancedOP5 ;;
+	3 ) clear; PerformanceOP5 ;;
 	4 ) clear; Disable ;;
 	5 ) clear; Remove ;;
 	6 ) clear; exit ; $BB mount -o remount,ro /system 2>/dev/null ; mount -o remount,ro /system 2>/dev/null ;; 
@@ -1279,9 +1279,11 @@ done
 echo ""
 $BB mount -o remount,rw /system 2>/dev/null
 mount -o remount,rw /system 2>/dev/null
-echo -e "\e[01;31m We don't support any other device. \e[00;37m"
+echo -e "\e[01;31m This tweak supports OP5 and S835 devices. \e[00;37m"
 sleep 2
-echo -e "\e[01;31m If you still want to use the tweaks select from above the device most similar to your device. \e[00;37m"
+echo -e "\e[01;31m For OP3/T and S820/S821 devices, visit original thread \e[00;37m"
+sleep 2
+echo -e "\e[01;31m If you still want to use the tweaks select the OP5 \e[00;37m"
 sleep 3
 echo -e "\e[01;31m But expect NO SUPPORT from us!!! \e[00;37m"
 sleep 2
@@ -1354,7 +1356,7 @@ read option
 echo ""
 case $option in
 	1 ) clear; main_menu_op5 ;;
-	2 ) clear; main_menu_op3t ;;
+	2 ) clear; other ;;
 	3 ) clear; other ;;
 	4 ) clear; reapply ;;
 	5 ) clear; exit ; $BB mount -o remount,ro /system 2>/dev/null ; mount -o remount,ro /system 2>/dev/null ;; 
