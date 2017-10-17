@@ -56,8 +56,8 @@ if [ -e "/proc/sys/kernel/sched_nr_migrate" ]; then
     echo 15 > /proc/sys/kernel/sched_walt_init_task_load_pct
     echo 10000000 > /proc/sys/kernel/sched_walt_cpu_high_irqload
     echo 10000000 > /proc/sys/kernel/sched_latency_ns
-    echo 1000000 > /proc/sys/kernel/sched_wakeup_granularity_ns
-    echo 3000000 > /proc/sys/kernel/sched_min_granularity_ns
+    echo 2000000 > /proc/sys/kernel/sched_wakeup_granularity_ns
+    echo 2250000 > /proc/sys/kernel/sched_min_granularity_ns
     echo 32 > /proc/sys/kernel/sched_nr_migrate
     echo stock settings applied! Please reboot!
 else

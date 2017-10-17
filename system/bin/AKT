@@ -388,7 +388,7 @@ echo -e "\e[01;92m DOWN  More Battery / Less Performance \e[00;37m"
 echo ""
 sleep 1.5
 echo -e "\e[01;91m 1.) Burnout R1 by @Mostafa Wael \e[00;37m"
-echo -e "\e[01;91m 2.) Burnout PR3 by @Mostafa Wael \e[00;37m"
+echo -e "\e[01;91m 2.) [EAS] Soilwork_performance \e[00;37m"
 echo -e "\e[01;33m 3.) Nameless Perfomance by @Senthil360 \e[00;37m"
 echo -e "\e[01;92m 4.) Fusion Performance by @Patalao \e[00;37m"
 echo -e "\e[01;90m 5.) Additional tweaks... \e[00;37m"
@@ -422,24 +422,24 @@ echo " Installation finished... "
 echo " For additional information and questions, please visit our XDA thread"
 sleep 5; main_menu_op5;
 exit;;
-2 ) #Burnout PR3.5 
-$BB mount -o remount,rw /system 2>/dev/null
-mount -o remount,rw /system 2>/dev/null
-if [ -e "/system/su.d/99AKT" ]; then
-grep -v "sleep" /system/etc/AKT/BPN > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/etc/init.d/99AKT
-chmod 700 /system/su.d/99AKT
-fi
-if [ -e "/system/etc/init.d/99AKT" ]; then
-grep -v "sleep" /system/etc/AKT/BPN > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/su.d/99AKT
-chmod 777 /system/etc/init.d/99AKT
-fi
-if [ -e "/storage/emulated/0/AKT/AKT" ]; then
-grep -v "sleep" /system/etc/AKT/BPN > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /storage/emulated/0/AKT/AKT
-fi
-clear
-sh /system/etc/AKT/BPN
-clear
-echo " Installation finished... "
+2 ) #Soilwork_performance 
+#$BB mount -o remount,rw /system 2>/dev/null
+#mount -o remount,rw /system 2>/dev/null
+#if [ -e "/system/su.d/99AKT" ]; then
+#grep -v "sleep" /system/etc/AKT/BPN > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/etc/init.d/99AKT
+#chmod 700 /system/su.d/99AKT
+#fi
+#if [ -e "/system/etc/init.d/99AKT" ]; then
+#grep -v "sleep" /system/etc/AKT/BPN > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/su.d/99AKT
+#chmod 777 /system/etc/init.d/99AKT
+#fi
+#if [ -e "/storage/emulated/0/AKT/AKT" ]; then
+#grep -v "sleep" /system/etc/AKT/BPN > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /storage/emulated/0/AKT/AKT
+#fi
+#clear
+#sh /system/etc/AKT/BPN
+#clear
+echo "Soon!"
 echo " For additional information and questions, please visit our XDA thread"
 sleep 5; main_menu_op5;
 exit;;
