@@ -3,6 +3,7 @@
 #Stock are the stock settings from Stock kernel
 #Scripts made by Senthil360 and Asiier and changed by Mostafa Wael
 #Credits for @Asiier/@Mostafa Wael/@Senthil360/@patalao
+# Modified by xXx
 #TWEAKS_BEGIN
 echo ""
 echo --------------------------------------------
@@ -225,46 +226,46 @@ sleep 0.5
 echo "=========================================="
 echo Tweaking other various Settings
 echo ·I/O Values
-if [ -d /sys/block/dm-0 ] || [ -d /sys/devices/virtual/block/dm-0 ]; then
-if [ -e /sys/devices/virtual/block/dm-0/queue/scheduler ]; then
-    DM_PATH=/sys/devices/virtual/block/dm-0/queue
-fi
-if [ -e /sys/block/dm-0/queue/scheduler ]; then
-    DM_PATH=/sys/block/dm-0/queue
-fi
-string=/sys/devices/virtual/block/dm-0/queue/scheduler;
-Cfq_Available=false;
-if  $BB grep 'cfq' $string; then
-     Cfq_Available=true;
-fi
-if [ "$Cfq_Available" == "true" ]; then
-    if [ -e $DM_PATH/scheduler_hard ]; then
-       echo cfq > $DM_PATH/scheduler_hard
-    fi
-    echo cfq > $DM_PATH/scheduler
-    sleep 2
-    echo 2 > $DM_PATH/iosched/back_seek_penalty
-    echo 0 > $DM_PATH/iosched/group_idle
-    echo 0 > $DM_PATH/iosched/slice_idle
-    echo 1 > $DM_PATH/iosched/low_latency
-    echo 8 > $DM_PATH/iosched/quantum
-    echo 300 > $DM_PATH/iosched/target_latency
-fi
-if [ "$Cfq_Available" = "false" ]; then
-    if grep -q 'ro.build.flavor=cm_oneplus3-userdebug' /system/build.prop; then
-        echo CFQ not avalible, setting 'Noop' instead...
-	if [ -e $DM_PATH/scheduler_hard ]; then
-            echo noop > $DM_PATH/scheduler_hard
-        fi
-        echo noop > $DM_PATH/scheduler
-    else
-        echo CFQ not avalible, setting 'ZEN' instead...		
-	if [ -e $DM_PATH/scheduler_hard ]; then
-            echo zen > $DM_PATH/scheduler_hard
-        fi
-        echo zen > $DM_PATH/scheduler
-    fi
-fi
+if [ -d /sys/block/sda ] || [ -d /sys/devices/virtual/block/dm-0 ]; then
+	if [ -e /sys/devices/virtual/block/dm-0/queue/scheduler ]; then
+		DM_PATH=/sys/devices/virtual/block/dm-0/queue
+	fi
+	if [ -e /sys/block/sda/queue/scheduler ]; then
+		DM_PATH=/sys/block/sda/queue
+	fi
+	string=$DM_PATH/scheduler;
+	Cfq_Available=false;
+	if  $BB grep 'cfq' $string; then
+		 Cfq_Available=true;
+	fi
+	if [ "$Cfq_Available" == "true" ]; then
+		if [ -e $DM_PATH/scheduler_hard ]; then
+		   echo cfq > $DM_PATH/scheduler_hard
+		fi
+		echo cfq > $DM_PATH/scheduler
+		sleep 2
+		echo 2 > $DM_PATH/iosched/back_seek_penalty
+		echo 0 > $DM_PATH/iosched/group_idle
+		echo 0 > $DM_PATH/iosched/slice_idle
+		echo 1 > $DM_PATH/iosched/low_latency
+		echo 8 > $DM_PATH/iosched/quantum
+		echo 300 > $DM_PATH/iosched/target_latency
+	fi
+	if [ "$Cfq_Available" = "false" ]; then
+		if grep -q 'ro.build.flavor=cm_oneplus3-userdebug' /system/build.prop; then
+			echo CFQ not avalible, setting 'Noop' instead...
+		if [ -e $DM_PATH/scheduler_hard ]; then
+				echo noop > $DM_PATH/scheduler_hard
+			fi
+			echo noop > $DM_PATH/scheduler
+		else
+			echo CFQ not avalible, setting 'ZEN' instead...		
+		if [ -e $DM_PATH/scheduler_hard ]; then
+				echo zen > $DM_PATH/scheduler_hard
+			fi
+			echo zen > $DM_PATH/scheduler
+		fi
+	fi
 fi
 for i in /sys/block/../devices/soc/624000.ufshc/host0/target0:0:0/0:0:0:[0-4]/block/*/queue; do
   string4=$($BB readlink -f $i/scheduler | cut -d 'q' -f1 | cut -d 'k' -f2 | cut -d '/' -f2 | tr a-z A-Z)
@@ -318,7 +319,7 @@ else
 fi
 echo ·TCP Values
 string2=/proc/sys/net/ipv4/tcp_available_congestion_control
-if $BB grep 'westwood' $string2; then
+if $BB grep 'cubic' $string2; then
    echo cubic > /proc/sys/net/ipv4/tcp_congestion_control
 else
 	echo cubic not avilable, using westwood
