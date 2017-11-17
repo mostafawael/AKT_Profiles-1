@@ -98,16 +98,16 @@ echo interactive > /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor
 chmod 444 /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor
 #Grab Maximum Achievable Frequency for the Big Cluster
 maxfreq_2=$(cat "/sys/devices/system/cpu/cpu4/cpufreq/cpuinfo_max_freq")				
-if test $maxfreq_2 -eq 2457400; then
+if test $maxfreq_2 -eq 2457600; then
 	chmod 644 /sys/devices/system/cpu/cpu4/cpufreq/scaling_max_freq
-	echo 2457400 > /sys/devices/system/cpu/cpu4/cpufreq/scaling_max_freq
+	echo 2457600 > /sys/devices/system/cpu/cpu4/cpufreq/scaling_max_freq
 	chmod 444 /sys/devices/system/cpu/cpu4/cpufreq/scaling_max_freq
 chmod 644 /sys/devices/system/cpu/cpu4/cpufreq/interactive/target_loads
 	echo 1 499200:29 652800:50 902400:60 1056000:70 1344000:80 2035200:99 > /sys/devices/system/cpu/cpu4/cpufreq/interactive/target_loads 
 chmod 444 /sys/devices/system/cpu/cpu4/cpufreq/interactive/target_loads
-elif test $maxfreq_2 -gt 2457400; then
+elif test $maxfreq_2 -gt 2457600; then
 	chmod 644 /sys/devices/system/cpu/cpu4/cpufreq/scaling_max_freq
-	echo 2457400 > /sys/devices/system/cpu/cpu4/cpufreq/scaling_max_freq
+	echo 2457600 > /sys/devices/system/cpu/cpu4/cpufreq/scaling_max_freq
 	chmod 444 /sys/devices/system/cpu/cpu4/cpufreq/scaling_max_freq
 chmod 644 /sys/devices/system/cpu/cpu4/cpufreq/interactive/target_loads
 echo 1 499200:29 652800:50 902400:60 1056000:70 1344000:80 2035200:99 > /sys/devices/system/cpu/cpu4/cpufreq/interactive/target_loads 

@@ -120,17 +120,17 @@ echo interactive > /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor
 chmod 444 /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor
 #Grab Maximum Achievable Frequency for the Big Cluster
 maxfreq=$(cat "/sys/devices/system/cpu/cpu4/cpufreq/cpuinfo_max_freq")                
-if test $maxfreq -eq 2457400; then
+if test $maxfreq -eq 2457600; then
     #Temporarily change permissions to governor files for the Big cluster to set the maximum frequency to 2457MHz
     echo No BIG Cluster Overclocking detected. 
     echo Applying appropriate values.
     chmod 644 /sys/devices/system/cpu/cpu4/cpufreq/scaling_max_freq
-    echo 2457400 > /sys/devices/system/cpu/cpu4/cpufreq/scaling_max_freq     #Core 2 Maximum Frequency = 2457MHz         
+    echo 2457600 > /sys/devices/system/cpu/cpu4/cpufreq/scaling_max_freq     #Core 2 Maximum Frequency = 2457MHz         
     chmod 444 /sys/devices/system/cpu/cpu4/cpufreq/scaling_max_freq
     chmod 644 /sys/devices/system/cpu/cpu4/cpufreq/interactive/target_loads
-    echo 35 806400:30 1056000:32 1267200:35 1420800:37 1651200:65 1881600:72 1958400:85 2112000:98 2265600:99 2457400:100 > /sys/devices/system/cpu/cpu4/cpufreq/interactive/target_loads 
+    echo 35 806400:30 1056000:32 1267200:35 1420800:37 1651200:65 1881600:72 1958400:85 2112000:98 2265600:99 2457600:100 > /sys/devices/system/cpu/cpu4/cpufreq/interactive/target_loads 
 chmod 444 /sys/devices/system/cpu/cpu4/cpufreq/interactive/target_loads
-elif test $maxfreq -lt 2457400; then
+elif test $maxfreq -lt 2457600; then
     #Temporarily change permissions to governor files for the Big cluster to set the maximum frequency to 2457MHz
     echo BIG Cluster Underclocking detected!!
     sleep 1
@@ -138,24 +138,24 @@ elif test $maxfreq -lt 2457400; then
     echo The tweaks will continue getting applied but we recommend setting the CPU to Max frequency!
     sleep 4
     #chmod 644 /sys/devices/system/cpu/cpu4/cpufreq/scaling_max_freq
-    #echo 2457400 > /sys/devices/system/cpu/cpu4/cpufreq/scaling_max_freq     #Core 0 Maximum Frequency = 2457MHz         
+    #echo 2457600 > /sys/devices/system/cpu/cpu4/cpufreq/scaling_max_freq     #Core 0 Maximum Frequency = 2457MHz         
     #chmod 444 /sys/devices/system/cpu/cpu4/cpufreq/scaling_max_freq
     chmod 644 /sys/devices/system/cpu/cpu4/cpufreq/interactive/target_loads
-    echo 35 806400:30 1056000:32 1267200:35 1420800:37 1651200:65 1881600:72 1958400:85 2112000:98 2265600:99 2457400:100 > /sys/devices/system/cpu/cpu4/cpufreq/interactive/target_loads 
+    echo 35 806400:30 1056000:32 1267200:35 1420800:37 1651200:65 1881600:72 1958400:85 2112000:98 2265600:99 2457600:100 > /sys/devices/system/cpu/cpu4/cpufreq/interactive/target_loads 
     chmod 444 /sys/devices/system/cpu/cpu4/cpufreq/interactive/target_loads
-elif test $maxfreq -gt 2457400; then
+elif test $maxfreq -gt 2457600; then
     #Temporarily change permissions to governor files for the Little cluster to set the maximum frequency to 2457MHz
     echo BIG Cluster Overclocking detected. 
     sleep 1
     echo This OverClock is higher than normal and only possible on Xceed Kernel
     echo The tweak will continue getting applyed
-    echo " Althought it might no reach the maximum frequency you have set as it hasn't been made to work with frecuencies higher than 2457400 Mhz "
+    echo " Althought it might no reach the maximum frequency you have set as it hasn't been made to work with frecuencies higher than 2457600 Mhz "
     sleep 4    
     #chmod 644 /sys/devices/system/cpu/cpu4/cpufreq/scaling_max_freq
-    #echo 2457400 > /sys/devices/system/cpu/cpu4/cpufreq/scaling_max_freq     #Core 0 Maximum Frequency = 2457MHz         
+    #echo 2457600 > /sys/devices/system/cpu/cpu4/cpufreq/scaling_max_freq     #Core 0 Maximum Frequency = 2457MHz         
     #chmod 444 /sys/devices/system/cpu/cpu4/cpufreq/scaling_max_freq
     chmod 644 /sys/devices/system/cpu/cpu4/cpufreq/interactive/target_loads
-    echo 35 806400:30 1056000:32 1267200:35 1420800:37 1651200:65 1881600:72 1958400:85 2112000:98 2265600:99 2457400:100 > /sys/devices/system/cpu/cpu4/cpufreq/interactive/target_loads 
+    echo 35 806400:30 1056000:32 1267200:35 1420800:37 1651200:65 1881600:72 1958400:85 2112000:98 2265600:99 2457600:100 > /sys/devices/system/cpu/cpu4/cpufreq/interactive/target_loads 
     chmod 444 /sys/devices/system/cpu/cpu4/cpufreq/interactive/target_loads
 fi
 sleep 0.5
