@@ -609,3 +609,14 @@ fstrim -v /data
 fstrim -v /cache
 fstrim -v /system
 fstrim -v /preload
+
+sleep 1
+echo ------------------------------------------------------------
+echo 'Soilwork Battery Extreme' Successfully Applied!
+echo "Soilwork Battery Extreme" > /data/system/current_profile
+echo   You may now tweak them further
+echo    using EXKM or Kernel Adiutor
+echo ------------------------------------------------------------
+echo ""
+echo " Done,  press ENTER then close"
+sleep 4
