@@ -221,6 +221,67 @@ fi
 if [ -e "/proc/sys/kernel/sched_boost" ]; then
 	echo 1 > /proc/sys/kernel/sched_boost
 fi
+if grep -q 'ro.build.version.sdk=27' /system/build.prop; then
+	echo Android Oreo 8.1.0 detected!
+	sleep 0.3
+	Applying minor adjustments!
+chmod 644 /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+echo interactive > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+chmod 444 /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+chmod 644 /sys/devices/system/cpu/cpu0/cpufreq/interactive/*
+echo 80000 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/timer_slack
+chmod 644 /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads
+echo 60 1555200:70 1824000:95 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads
+chmod 444 /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads
+echo 20000 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/timer_rate
+echo 59000 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/above_hispeed_delay
+echo 1555200 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/hispeed_freq 
+echo 80 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/go_hispeed_load
+echo 60000 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/min_sample_time
+echo 79000 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/max_freq_hysteresis
+echo 1 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/ignore_hispeed_on_notif
+echo 0 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/boost
+echo 0 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/fast_ramp_down
+echo 0 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/align_windows
+echo 1 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/use_migration_notif
+echo 1 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/use_sched_load
+echo 80000 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/boostpulse_duration
+echo 0 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/io_is_busy
+if [ -e "/sys/devices/system/cpu/cpu0/cpufreq/interactive/enable_prediction" ]; then
+    chmod 644 /sys/devices/system/cpu/cpu0/cpufreq/interactive/enable_prediction
+    echo 0 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/enable_prediction
+fi
+chmod 644 /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor
+echo interactive > /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor
+chmod 444 /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor
+chmod 644 /sys/devices/system/cpu/cpu4/cpufreq/interactive/*
+echo 80000 > /sys/devices/system/cpu/cpu4/cpufreq/interactive/timer_slack
+chmod 644 /sys/devices/system/cpu/cpu4/cpufreq/interactive/target_loads
+echo 40 902400:50 1190400:60 1267200:65 1574400:70 1958400:95 > /sys/devices/system/cpu/cpu4/cpufreq/interactive/target_loads
+chmod 444 /sys/devices/system/cpu/cpu4/cpufreq/interactive/target_loads
+echo 20000 > /sys/devices/system/cpu/cpu4/cpufreq/interactive/timer_rate
+echo 60000 1958400:30000 > /sys/devices/system/cpu/cpu4/cpufreq/interactive/above_hispeed_delay
+echo 1574400 > /sys/devices/system/cpu/cpu4/cpufreq/interactive/hispeed_freq
+echo 80 > /sys/devices/system/cpu/cpu4/cpufreq/interactive/go_hispeed_load
+echo 60000 > /sys/devices/system/cpu/cpu4/cpufreq/interactive/min_sample_time
+echo 79000 > /sys/devices/system/cpu/cpu4/cpufreq/interactive/max_freq_hysteresis
+echo 1 > /sys/devices/system/cpu/cpu4/cpufreq/interactive/ignore_hispeed_on_notif
+echo 0 > /sys/devices/system/cpu/cpu4/cpufreq/interactive/boost
+echo 0 > /sys/devices/system/cpu/cpu4/cpufreq/interactive/fast_ramp_down
+echo 0 > /sys/devices/system/cpu/cpu4/cpufreq/interactive/align_windows
+echo 1 > /sys/devices/system/cpu/cpu4/cpufreq/interactive/use_migration_notif
+echo 1 > /sys/devices/system/cpu/cpu4/cpufreq/interactive/use_sched_load
+echo 80000 > /sys/devices/system/cpu/cpu4/cpufreq/interactive/boostpulse_duration
+echo 0 > /sys/devices/system/cpu/cpu4/cpufreq/interactive/io_is_busy
+if [ -e "/sys/devices/system/cpu/cpu4/cpufreq/interactive/enable_prediction" ]; then
+    chmod 644 /sys/devices/system/cpu/cpu4/cpufreq/interactive/enable_prediction
+    echo 0 > /sys/devices/system/cpu/cpu4/cpufreq/interactive/enable_prediction
+fi
+chmod 644 /sys/module/cpu_boost/parameters/input_boost_freq
+echo 0:1555200 1:0 2:0 3:0 4:806400 5:0 6:0 7:0 > /sys/module/cpu_boost/parameters/input_boost_freq
+    chmod 644 /sys/module/cpu_boost/parameters/input_boost_ms
+    echo 1000 > /sys/module/cpu_boost/parameters/input_boost_ms
+fi
 #Tweaks for other various Settings
 sleep 0.5
 echo "=========================================="
