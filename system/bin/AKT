@@ -412,11 +412,12 @@ echo -e "\e[01;92m DOWN  More Battery / Less Performance \e[00;37m"
 echo ""
 sleep 1.5
 echo -e "\e[01;91m 1.) Burnout R1 by @Mostafa Wael \e[00;37m"
-echo -e "\e[01;91m 2.) [EAS] Soilwork_performance \e[00;37m"
-echo -e "\e[01;33m 3.) Nameless Perfomance by @Senthil360 \e[00;37m"
-echo -e "\e[01;92m 4.) Fusion Performance by @Patalao \e[00;37m"
-echo -e "\e[01;90m 5.) Additional tweaks... \e[00;37m"
-echo -e "\e[01;94m 6.) Main menu \e[00;37m"
+echo -e "\e[01;91m 2.) Burnout_blu R2 by @Mostafa Wael \e[00;37m"
+echo -e "\e[01;91m 3.) [EAS] Soilwork_performance \e[00;37m"
+echo -e "\e[01;33m 4.) Nameless Perfomance by @Senthil360 \e[00;37m"
+echo -e "\e[01;92m 5.) Fusion Performance by @Patalao \e[00;37m"
+echo -e "\e[01;90m 6.) Additional tweaks... \e[00;37m"
+echo -e "\e[01;94m 7.) Main menu \e[00;37m"
 echo ""
 echo $divider
 echo ""
@@ -446,7 +447,29 @@ echo " Installation finished... "
 echo " For additional information and questions, please visit our XDA thread"
 sleep 5; main_menu_op5;
 exit;;
-2 ) #Burnout R1 
+2 ) #Burnout_blu R2 
+$BB mount -o remount,rw /system 2>/dev/null
+mount -o remount,rw /system 2>/dev/null
+if [ -e "/system/su.d/99AKT" ]; then
+grep -v "sleep" /system/etc/AKT/BEF_blu > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/etc/init.d/99AKT
+chmod 700 /system/su.d/99AKT
+fi
+if [ -e "/system/etc/init.d/99AKT" ]; then
+grep -v "sleep" /system/etc/AKT/BEF_blu > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/su.d/99AKT
+chmod 777 /system/etc/init.d/99AKT
+fi
+if [ -e "/storage/emulated/0/AKT/AKT" ]; then
+grep -v "sleep" /system/etc/AKT/BEF_blu > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /storage/emulated/0/AKT/AKT
+fi
+chmod 777 /system/etc/AKT/BEF_blu
+clear
+sh /system/etc/AKT/BEF_blu
+clear
+echo " Installation finished... "
+echo " For additional information and questions, please visit our XDA thread"
+sleep 5; main_menu_op5;
+exit;;
+3 ) #Soilwork_performance 
 $BB mount -o remount,rw /system 2>/dev/null
 mount -o remount,rw /system 2>/dev/null
 if [ -e "/system/su.d/99AKT" ]; then
@@ -468,7 +491,7 @@ echo " Installation finished... "
 echo " For additional information and questions, please visit our XDA thread"
 sleep 5; main_menu_op5;
 exit;;
-3 )  #Nameless Performance
+4 )  #Nameless Performance
 $BB mount -o remount,rw /system 2>/dev/null
 mount -o remount,rw /system 2>/dev/null
 if [ -e "/system/su.d/99AKT" ]; then
@@ -490,7 +513,7 @@ echo " Installation finished... "
 echo " For additional information and questions, please visit our XDA thread"
 sleep 5; main_menu_op5;
 exit;;
-4 ) #Fusion Perfomance
+5 ) #Fusion Perfomance
 $BB mount -o remount,rw /system 2>/dev/null
 mount -o remount,rw /system 2>/dev/null
 if [ -e "/system/su.d/99AKT" ]; then
@@ -512,12 +535,12 @@ echo " Installation finished... "
 echo " For additional information and questions, please visit our XDA thread"
 sleep 5; main_menu_op5;
 exit;;
-5 ) clear
+6 ) clear
 echo "Coming Soon"
 echo "You tell me what others tweaks you want me too add"
 sleep 5; main_menu_op5;
 exit;;
-6 ) clear; main_menu;;
+7 ) clear; main_menu;;
 * ) echo " Please, enter a valid option..."
 sleep 2
 esac
