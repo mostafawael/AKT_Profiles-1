@@ -53,7 +53,7 @@ grep -v "sleep" /system/etc/AKT/PZ_battery > /system/etc/AKT/Temp && mv /system/
 chmod 700 /system/su.d/99AKT
 fi
 if [ -e "/system/etc/init.d/99AKT" ]; then
-grep -v "sleep" /system/etc/AKT/PZ_battery > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/su.d/99AKT
+grep -v "sleep" /system/etc/AKT/PZ_battery > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/etc/init.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
 fi
 if [ -e "/storage/emulated/0/AKT/AKT" ]; then
@@ -186,7 +186,7 @@ grep -v "sleep" /system/etc/AKT/Soilwork_battery > /system/etc/AKT/Temp && mv /s
 chmod 700 /system/su.d/99AKT
 fi
 if [ -e "/system/etc/init.d/99AKT" ]; then
-grep -v "sleep" /system/etc/AKT/Soilwork_battery > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/su.d/99AKT
+grep -v "sleep" /system/etc/AKT/Soilwork_battery > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/etc/init.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
 fi
 if [ -e "/storage/emulated/0/AKT/AKT" ]; then
@@ -209,7 +209,7 @@ grep -v "sleep" /system/etc/AKT/Soilwork_battery_extreme > /system/etc/AKT/Temp 
 chmod 700 /system/su.d/99AKT
 fi
 if [ -e "/system/etc/init.d/99AKT" ]; then
-grep -v "sleep" /system/etc/AKT/Soilwork_battery_extreme > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/su.d/99AKT
+grep -v "sleep" /system/etc/AKT/Soilwork_battery_extreme > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/etc/init.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
 fi
 if [ -e "/storage/emulated/0/AKT/AKT" ]; then
@@ -433,7 +433,7 @@ grep -v "sleep" /system/etc/AKT/BEF > /system/etc/AKT/Temp && mv /system/etc/AKT
 chmod 700 /system/su.d/99AKT
 fi
 if [ -e "/system/etc/init.d/99AKT" ]; then
-grep -v "sleep" /system/etc/AKT/BEF > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/su.d/99AKT
+grep -v "sleep" /system/etc/AKT/BEF > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/etc/init.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
 fi
 if [ -e "/storage/emulated/0/AKT/AKT" ]; then
@@ -455,7 +455,7 @@ grep -v "sleep" /system/etc/AKT/BEF_blu > /system/etc/AKT/Temp && mv /system/etc
 chmod 700 /system/su.d/99AKT
 fi
 if [ -e "/system/etc/init.d/99AKT" ]; then
-grep -v "sleep" /system/etc/AKT/BEF_blu > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/su.d/99AKT
+grep -v "sleep" /system/etc/AKT/BEF_blu > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/etc/init.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
 fi
 if [ -e "/storage/emulated/0/AKT/AKT" ]; then
@@ -477,7 +477,7 @@ grep -v "sleep" /system/etc/AKT/Soilwork_performance > /system/etc/AKT/Temp && m
 chmod 700 /system/su.d/99AKT
 fi
 if [ -e "/system/etc/init.d/99AKT" ]; then
-grep -v "sleep" /system/etc/AKT/Soilwork_performance > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/su.d/99AKT
+grep -v "sleep" /system/etc/AKT/Soilwork_performance > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/etc/init.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
 fi
 if [ -e "/storage/emulated/0/AKT/AKT" ]; then
@@ -576,7 +576,7 @@ grep -v "sleep" /system/etc/AKT/BEFT > /system/etc/AKT/Temp && mv /system/etc/AK
 chmod 700 /system/su.d/99AKT
 fi
 if [ -e "/system/etc/init.d/99AKT" ]; then
-grep -v "sleep" /system/etc/AKT/BEFT > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/su.d/99AKT
+grep -v "sleep" /system/etc/AKT/BEFT > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/etc/init.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
 fi
 if [ -e "/storage/emulated/0/AKT/AKT" ]; then
@@ -616,7 +616,7 @@ grep -v "sleep" /system/etc/AKT/NLB_performanceT > /system/etc/AKT/Temp && mv /s
 chmod 700 /system/su.d/99AKT
 fi
 if [ -e "/system/etc/init.d/99AKT" ]; then
-grep -v "sleep" /system/etc/AKT/NLB_performanceT > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/su.d/99AKT
+grep -v "sleep" /system/etc/AKT/NLB_performanceT > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/etc/init.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
 fi
 if [ -e "/storage/emulated/0/AKT/AKT" ]; then
@@ -638,7 +638,7 @@ grep -v "sleep" /system/etc/AKT/FusionPT > /system/etc/AKT/Temp && mv /system/et
 chmod 700 /system/su.d/99AKT
 fi
 if [ -e "/system/etc/init.d/99AKT" ]; then
-grep -v "sleep" /system/etc/AKT/FusionPT > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/su.d/99AKT
+grep -v "sleep" /system/etc/AKT/FusionPT > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/etc/init.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
 fi
 if [ -e "/storage/emulated/0/AKT/AKT" ]; then
@@ -697,7 +697,7 @@ grep -v "sleep" /system/etc/AKT/FusionR > /system/etc/AKT/Temp && mv /system/etc
 chmod 700 /system/su.d/99AKT
 fi
 if [ -e "/system/etc/init.d/99AKT" ]; then
-grep -v "sleep" /system/etc/AKT/FusionR > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/su.d/99AKT
+grep -v "sleep" /system/etc/AKT/FusionR > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/etc/init.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
 fi
 if [ -e "/storage/emulated/0/AKT/AKT" ]; then
@@ -719,7 +719,7 @@ grep -v "sleep" /system/etc/AKT/GhostPepper > /system/etc/AKT/Temp && mv /system
 chmod 700 /system/su.d/99AKT
 fi
 if [ -e "/system/etc/init.d/99AKT" ]; then
-grep -v "sleep" /system/etc/AKT/GhostPepper > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/su.d/99AKT
+grep -v "sleep" /system/etc/AKT/GhostPepper > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/etc/init.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
 fi
 if [ -e "/storage/emulated/0/AKT/AKT" ]; then
@@ -741,7 +741,7 @@ grep -v "sleep" /system/etc/AKT/FusionB > /system/etc/AKT/Temp && mv /system/etc
 chmod 700 /system/su.d/99AKT
 fi
 if [ -e "/system/etc/init.d/99AKT" ]; then
-grep -v "sleep" /system/etc/AKT/FusionB > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/su.d/99AKT
+grep -v "sleep" /system/etc/AKT/FusionB > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/etc/init.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
 fi
 if [ -e "/storage/emulated/0/AKT/AKT" ]; then
@@ -763,7 +763,7 @@ grep -v "sleep" /system/etc/AKT/NLB_balanced > /system/etc/AKT/Temp && mv /syste
 chmod 700 /system/su.d/99AKT
 fi
 if [ -e "/system/etc/init.d/99AKT" ]; then
-grep -v "sleep" /system/etc/AKT/NLB_balanced > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/su.d/99AKT
+grep -v "sleep" /system/etc/AKT/NLB_balanced > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/etc/init.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
 fi
 if [ -e "/storage/emulated/0/AKT/AKT" ]; then
@@ -785,7 +785,7 @@ grep -v "sleep" /system/etc/AKT/HawkPepper > /system/etc/AKT/Temp && mv /system/
 chmod 700 /system/su.d/99AKT
 fi
 if [ -e "/system/etc/init.d/99AKT" ]; then
-grep -v "sleep" /system/etc/AKT/HawkPepper > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/su.d/99AKT
+grep -v "sleep" /system/etc/AKT/HawkPepper > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/etc/init.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
 fi
 if [ -e "/storage/emulated/0/AKT/AKT" ]; then
@@ -807,7 +807,7 @@ grep -v "sleep" /system/etc/AKT/PZ_balanced > /system/etc/AKT/Temp && mv /system
 chmod 700 /system/su.d/99AKT
 fi
 if [ -e "/system/etc/init.d/99AKT" ]; then
-grep -v "sleep" /system/etc/AKT/PZ_balanced > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/su.d/99AKT
+grep -v "sleep" /system/etc/AKT/PZ_balanced > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/etc/init.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
 fi
 if [ -e "/storage/emulated/0/AKT/AKT" ]; then
@@ -829,7 +829,7 @@ grep -v "sleep" /system/etc/AKT/PX_balanced > /system/etc/AKT/Temp && mv /system
 chmod 700 /system/su.d/99AKT
 fi
 if [ -e "/system/etc/init.d/99AKT" ]; then
-grep -v "sleep" /system/etc/AKT/PX_balanced > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/su.d/99AKT
+grep -v "sleep" /system/etc/AKT/PX_balanced > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/etc/init.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
 fi
 if [ -e "/storage/emulated/0/AKT/AKT" ]; then
@@ -851,7 +851,7 @@ grep -v "sleep" /system/etc/AKT/Soilwork_balanced > /system/etc/AKT/Temp && mv /
 chmod 700 /system/su.d/99AKT
 fi
 if [ -e "/system/etc/init.d/99AKT" ]; then
-grep -v "sleep" /system/etc/AKT/Soilwork_balanced > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/su.d/99AKT
+grep -v "sleep" /system/etc/AKT/Soilwork_balanced > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/etc/init.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
 fi
 if [ -e "/storage/emulated/0/AKT/AKT" ]; then
@@ -907,7 +907,7 @@ grep -v "sleep" /system/etc/AKT/FusionR > /system/etc/AKT/Temp && mv /system/etc
 chmod 700 /system/su.d/99AKT
 fi
 if [ -e "/system/etc/init.d/99AKT" ]; then
-grep -v "sleep" /system/etc/AKT/FusionR > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/su.d/99AKT
+grep -v "sleep" /system/etc/AKT/FusionR > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/etc/init.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
 fi
 if [ -e "/storage/emulated/0/AKT/AKT" ]; then
@@ -929,7 +929,7 @@ grep -v "sleep" /system/etc/AKT/GhostPepperT > /system/etc/AKT/Temp && mv /syste
 chmod 700 /system/su.d/99AKT
 fi
 if [ -e "/system/etc/init.d/99AKT" ]; then
-grep -v "sleep" /system/etc/AKT/GhostPepperT > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/su.d/99AKT
+grep -v "sleep" /system/etc/AKT/GhostPepperT > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/etc/init.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
 fi
 if [ -e "/storage/emulated/0/AKT/AKT" ]; then
@@ -951,7 +951,7 @@ grep -v "sleep" /system/etc/AKT/FusionBT > /system/etc/AKT/Temp && mv /system/et
 chmod 700 /system/su.d/99AKT
 fi
 if [ -e "/system/etc/init.d/99AKT" ]; then
-grep -v "sleep" /system/etc/AKT/FusionBT > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/su.d/99AKT
+grep -v "sleep" /system/etc/AKT/FusionBT > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/etc/init.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
 fi
 if [ -e "/storage/emulated/0/AKT/AKT" ]; then
@@ -973,7 +973,7 @@ grep -v "sleep" /system/etc/AKT/NLB_balancedT > /system/etc/AKT/Temp && mv /syst
 chmod 700 /system/su.d/99AKT
 fi
 if [ -e "/system/etc/init.d/99AKT" ]; then
-grep -v "sleep" /system/etc/AKT/NLB_balancedT > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/su.d/99AKT
+grep -v "sleep" /system/etc/AKT/NLB_balancedT > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/etc/init.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
 fi
 if [ -e "/storage/emulated/0/AKT/AKT" ]; then
@@ -995,7 +995,7 @@ grep -v "sleep" /system/etc/AKT/HawkPepperT > /system/etc/AKT/Temp && mv /system
 chmod 700 /system/su.d/99AKT
 fi
 if [ -e "/system/etc/init.d/99AKT" ]; then
-grep -v "sleep" /system/etc/AKT/HawkPepperT > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/su.d/99AKT
+grep -v "sleep" /system/etc/AKT/HawkPepperT > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/etc/init.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
 fi
 if [ -e "/storage/emulated/0/AKT/AKT" ]; then
@@ -1017,7 +1017,7 @@ grep -v "sleep" /system/etc/AKT/PZ_balancedT > /system/etc/AKT/Temp && mv /syste
 chmod 700 /system/su.d/99AKT
 fi
 if [ -e "/system/etc/init.d/99AKT" ]; then
-grep -v "sleep" /system/etc/AKT/PZ_balancedT > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/su.d/99AKT
+grep -v "sleep" /system/etc/AKT/PZ_balancedT > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/etc/init.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
 fi
 if [ -e "/storage/emulated/0/AKT/AKT" ]; then
@@ -1039,7 +1039,7 @@ grep -v "sleep" /system/etc/AKT/PX_balancedT > /system/etc/AKT/Temp && mv /syste
 chmod 700 /system/su.d/99AKT
 fi
 if [ -e "/system/etc/init.d/99AKT" ]; then
-grep -v "sleep" /system/etc/AKT/PX_balancedT > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/su.d/99AKT
+grep -v "sleep" /system/etc/AKT/PX_balancedT > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/etc/init.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
 fi
 if [ -e "/storage/emulated/0/AKT/AKT" ]; then
@@ -1092,7 +1092,7 @@ grep -v "sleep" /system/etc/AKT/BEF > /system/etc/AKT/Temp && mv /system/etc/AKT
 chmod 700 /system/su.d/99AKT
 fi
 if [ -e "/system/etc/init.d/99AKT" ]; then
-grep -v "sleep" /system/etc/AKT/BEF > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/su.d/99AKT
+grep -v "sleep" /system/etc/AKT/BEF > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/etc/init.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
 fi
 if [ -e "/storage/emulated/0/AKT/AKT" ]; then
@@ -1114,7 +1114,7 @@ grep -v "sleep" /system/etc/AKT/PZ_battery > /system/etc/AKT/Temp && mv /system/
 chmod 700 /system/su.d/99AKT
 fi
 if [ -e "/system/etc/init.d/99AKT" ]; then
-grep -v "sleep" /system/etc/AKT/PZ_battery > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/su.d/99AKT
+grep -v "sleep" /system/etc/AKT/PZ_battery > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/etc/init.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
 fi
 if [ -e "/storage/emulated/0/AKT/AKT" ]; then
@@ -1129,7 +1129,7 @@ grep -v "sleep" /system/etc/AKT/BPN > /system/etc/AKT/Temp && mv /system/etc/AKT
 chmod 700 /system/su.d/99AKT
 fi
 if [ -e "/system/etc/init.d/99AKT" ]; then
-grep -v "sleep" /system/etc/AKT/BPN > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/su.d/99AKT
+grep -v "sleep" /system/etc/AKT/BPN > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/etc/init.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
 fi
 if [ -e "/storage/emulated/0/AKT/AKT" ]; then
@@ -1151,7 +1151,7 @@ grep -v "sleep" /system/etc/AKT/NLB_performance > /system/etc/AKT/Temp && mv /sy
 chmod 700 /system/su.d/99AKT
 fi
 if [ -e "/system/etc/init.d/99AKT" ]; then
-grep -v "sleep" /system/etc/AKT/NLB_performance > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/su.d/99AKT
+grep -v "sleep" /system/etc/AKT/NLB_performance > /system/etc/AKT/Temp && mv /system/etc/AKT/Temp /system/etc/init.d/99AKT
 chmod 777 /system/etc/init.d/99AKT
 fi
 if [ -e "/storage/emulated/0/AKT/AKT" ]; then
